@@ -1,0 +1,101 @@
+{
+  "project_info": {
+    "project_number": "416800550219",
+    "firebase_url": "https://newsstand-today.firebaseio.com",
+    "project_id": "newsstand-today",
+    "storage_bucket": "newsstand-today.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416800550219:android:f20dae2c171cc6c25a8cce",
+        "android_client_info": {
+          "package_name": "com.nacrna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416800550219-460jg2so0n9ml5ns8ar72uojvghdth56.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nacrna",
+            "certificate_hash": "184268feee7c53f6d2903d07d87434cc3746d1e9"
+          }
+        },
+        {
+          "client_id": "416800550219-m0kt22dlh06ec07fb5cmgvfllue9v780.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8Ep4R3a8H3XOz665tVD3tiwtm7QpG93w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416800550219-m0kt22dlh06ec07fb5cmgvfllue9v780.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "416800550219-munmu2hrkpnfng733koimgc02botm6l3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sunflowerapps.newsstand-app",
+                "app_store_id": "1538123018"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416800550219:android:a0ac1c45849cc2275a8cce",
+        "android_client_info": {
+          "package_name": "com.sunflowerapps.newsstand"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416800550219-rojpqlruttmfqdiaap7vh0oujf14jfb3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sunflowerapps.newsstand",
+            "certificate_hash": "184268feee7c53f6d2903d07d87434cc3746d1e9"
+          }
+        },
+        {
+          "client_id": "416800550219-m0kt22dlh06ec07fb5cmgvfllue9v780.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8Ep4R3a8H3XOz665tVD3tiwtm7QpG93w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416800550219-m0kt22dlh06ec07fb5cmgvfllue9v780.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "416800550219-munmu2hrkpnfng733koimgc02botm6l3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sunflowerapps.newsstand-app",
+                "app_store_id": "1538123018"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

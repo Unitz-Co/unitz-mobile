@@ -1,0 +1,40 @@
+{
+  "name": "unitz-mobile",
+  "displayName": "unitz-mobile",
+  "expo": {
+    "name": "unitz-mobile",
+    "slug": "unitz-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "../../modules/ns-app/assets/Icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "../../modules/ns-app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-6395643728392024~1526666099",
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.416800550219-munmu2hrkpnfng733koimgc02botm6l3"
+        }
+      },
+      "googleServicesFile": "./ios/GoogleService-Info.plist",
+      "bundleIdentifier": "com.sunflowerapps.newsstand-app",
+      "buildNumber": "4"
+    },
+    "android": {
+      "package": "com.nacrna",
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-6395643728392024~1526666099"
+      },
+      "googleServicesFile": "./android/app/google-services.json",
+      "versionCode": 5
+    }
+  }
+}
