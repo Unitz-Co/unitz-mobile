@@ -10,6 +10,12 @@ module.exports = function(api) {
         unsafe: true,
         path: path.resolve(process.cwd(), 'env/US.env'),
       }],
+      [
+        "inline-import",
+        {
+          "extensions": [".svgx"],
+        }
+      ],
     ],
   };
 };

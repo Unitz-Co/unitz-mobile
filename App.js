@@ -9,6 +9,7 @@ import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
 
+import Providers from '@uz/components/Providers';
 import StyleManager from '@vl/gstyles/StyleManager';
 import AuthProvider from '@uz/components/AuthProvider';
 // import IAPProvider from '@na/components/IAPProvider';
@@ -31,13 +32,13 @@ import NSApp from "@uz/unitz-app";
 // );
 
 const App = () => (
-  <AuthProvider>
-    <StyleManager>
-      <SafeAreaProvider>
-        <NSApp />
-      </SafeAreaProvider>
-    </StyleManager>
-  </AuthProvider>
+  <Providers providers={[
+    AuthProvider,
+    StyleManager,
+    SafeAreaProvider,
+  ]}>
+    <NSApp />
+  </Providers>
 );
 
 export default App;
