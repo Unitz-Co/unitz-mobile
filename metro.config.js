@@ -93,6 +93,9 @@ function getConfig(appDir, options = {}) {
         }
       ),
       // useWatchman: false,
+      assetExts: expoMetroWS.resolver.assetExts.filter(ext => ext !== "svg"),
+      // sourceExts,
+
     },
     transformer: {
       getTransformOptions: async () => ({
@@ -102,6 +105,7 @@ function getConfig(appDir, options = {}) {
         },
       }),
       ...expoMetroWS.transformer,
+      // babelTransformerPath: require.resolve("react-native-svg-transformer"),
     },
   };
 
