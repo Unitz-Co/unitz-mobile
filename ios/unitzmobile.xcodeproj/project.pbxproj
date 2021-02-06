@@ -350,7 +350,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sunflowerapps.newsstand-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unitz.mobile";
 				PRODUCT_NAME = unitzmobile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -375,7 +375,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sunflowerapps.newsstand-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unitz.mobile";
 				PRODUCT_NAME = unitzmobile;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
