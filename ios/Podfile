@@ -21,4 +21,5 @@ target 'unitzmobile' do
   #  post_install do |installer|
   #    flipper_post_install(installer)
   #  end
+  pod 'OpenTok', '2.18.1'
 end

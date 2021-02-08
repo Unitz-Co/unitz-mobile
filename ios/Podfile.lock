@@ -509,6 +509,10 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - OpenTok (2.18.1)
+  - opentok-react-native (0.15.0):
+    - OpenTok
+    - React
   - PromisesObjC (1.2.12)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
@@ -867,6 +871,8 @@ DEPENDENCIES:
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - OpenTok (= 2.18.1)
+  - opentok-react-native (from `../../../node_modules/opentok-react-native`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -965,6 +971,7 @@ SPEC REPOS:
     - leveldb-library
     - libwebp
     - nanopb
+    - OpenTok
     - PromisesObjC
     - SDWebImage
     - SDWebImageWebPCoder
@@ -1022,6 +1029,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  opentok-react-native:
+    :path: "../../../node_modules/opentok-react-native"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -1202,6 +1211,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  OpenTok: 2a816f5d77fbf2e2ebb5aec841bd21fb7dc7737b
+  opentok-react-native: 6531293d6513d05ab2e2774d6d46a68117789963
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
@@ -1265,6 +1276,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 6cad5929dbc0a5b986ad4d77caac497d4de730a7
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: bffd8e5db51c2bf7d764222653747f9a8f8e42c9
+PODFILE CHECKSUM: 0685d785f513e92e62b81af46c5c46405315d6dc
 
 COCOAPODS: 1.9.3

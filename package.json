@@ -64,6 +64,7 @@
     "expo": "~39.0.2",
     "expo-apple-authentication": "~2.2.1",
     "expo-application": "~2.3.0",
+    "expo-constants": "~10.0.0",
     "expo-device": "~2.3.0",
     "expo-facebook": "~9.0.0",
     "expo-font": "~8.3.0",
@@ -84,6 +85,7 @@
     "import-all.macro": "^3.1.0",
     "lodash": "^4.17.11",
     "moment": "^2.29.1",
+    "opentok-react-native": "^0.15.0",
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
     "react": "16.13.1",
@@ -149,10 +151,13 @@
       "**/expo",
       "**/expo/**",
       "**/expo-*",
+      "**/expo-*/**",
       "**/@expo/vector-icons",
       "**/@expo/vector-icons/**",
-      "**/expo-*",
-      "**/expo-*/**"
+      "**/metro",
+      "**/metro/**",
+      "**/metro-*",
+      "**/metro-*/**"
     ]
   },
   "private": true
