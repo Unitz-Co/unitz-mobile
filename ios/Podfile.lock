@@ -229,7 +229,7 @@ PODS:
     - UMCore
   - EXApplication (2.3.0):
     - UMCore
-  - EXConstants (9.3.5):
+  - EXConstants (10.0.1):
     - UMConstantsInterface
     - UMCore
   - EXDevice (2.3.0):
@@ -750,6 +750,8 @@ PODS:
     - React
   - RNCPicker (1.6.6):
     - React
+  - RNCPushNotificationIOS (1.8.0):
+    - React-Core
   - RNFastImage (8.3.4):
     - React-Core
     - SDWebImage (~> 5.8)
@@ -848,7 +850,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXAppleAuthentication (from `../node_modules/expo-apple-authentication/ios`)
   - EXApplication (from `../node_modules/expo-application/ios`)
-  - EXConstants (from `../node_modules/expo-linking/node_modules/expo-constants/ios`)
+  - EXConstants (from `../node_modules/expo-constants/ios`)
   - EXDevice (from `../node_modules/expo-device/ios`)
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFacebook (from `../node_modules/expo-facebook/ios`)
@@ -900,6 +902,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-community/picker`)"
+  - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
   - RNFastImage (from `../node_modules/react-native-fast-image`)
   - "RNFBAnalytics (from `../node_modules/@react-native-firebase/analytics`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
@@ -984,7 +987,7 @@ EXTERNAL SOURCES:
   EXApplication:
     :path: "../node_modules/expo-application/ios"
   EXConstants:
-    :path: "../node_modules/expo-linking/node_modules/expo-constants/ios"
+    :path: "../node_modules/expo-constants/ios"
   EXDevice:
     :path: "../node_modules/expo-device/ios"
   EXErrorRecovery:
@@ -1081,6 +1084,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/masked-view"
   RNCPicker:
     :path: "../node_modules/@react-native-community/picker"
+  RNCPushNotificationIOS:
+    :path: "../node_modules/@react-native-community/push-notification-ios"
   RNFastImage:
     :path: "../node_modules/react-native-fast-image"
   RNFBAnalytics:
@@ -1158,7 +1163,7 @@ SPEC CHECKSUMS:
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXAppleAuthentication: 97d5db59f3fb7aefc6cb06e351ba0828c8982232
   EXApplication: c346c5ab7d1a4607f1863e93490b79fe838148b1
-  EXConstants: 54d0bf04319d1692c6c7bc03ca151ef7a71705a4
+  EXConstants: 372375a99b0ac129a86507eaaa96da67d6d2dd0f
   EXDevice: e6ede72e08f6adc4b224d0628a9963d394ab9226
   EXErrorRecovery: 16696fe023fb46a32c3b09033abc361cfcf150a7
   EXFacebook: dd5352a2a74f825922131abf1ed438cf51d116a7
@@ -1239,6 +1244,7 @@ SPEC CHECKSUMS:
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 494015f2b7ec4bee5484b6f235aa19691426dcdb
+  RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
   RNFastImage: d4870d58f5936111c56218dbd7fcfc18e65b58ff
   RNFBAnalytics: 85804b152d3925cbfebe2571ba2c9ea3de9f0128
   RNFBApp: 43a062dc6a1a88edd934d2229d1ba64f25381598

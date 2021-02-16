@@ -13,6 +13,7 @@ import ContentProvider from '@uz/components/ContentfulProvider';
 import AuthProvider from '@uz/components/AuthProvider';
 import LayoutProvider from '@uz/components/LayoutProvider';
 import RefProvider from '@uz/components/RefProvider';
+import PNProvider from '@uz/components/PNProvider';
 import { LoadableProvider } from '@uz/components/Loadable';
 import I18nProvider from '@uz/mod-translations/Provider';
 // import IAPProvider from '@na/components/IAPProvider';
@@ -26,6 +27,7 @@ const App = () => (
     I18nProvider,
     LoadableProvider,
     AuthProvider,
+    PNProvider,
     ContentProvider,
     StyleManager,
     SafeAreaProvider,
