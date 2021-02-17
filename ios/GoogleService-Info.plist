@@ -6,6 +6,8 @@
 		<string>722707888554-sei65nnibehb9hc0br177f06t1piras0.apps.googleusercontent.com</string>
 		<key>REVERSED_CLIENT_ID</key>
 		<string>com.googleusercontent.apps.722707888554-sei65nnibehb9hc0br177f06t1piras0</string>
+		<key>ANDROID_CLIENT_ID</key>
+		<string>722707888554-f8n2ervffd3oim9k3094h7plt4beg2om.apps.googleusercontent.com</string>
 		<key>API_KEY</key>
 		<string>AIzaSyDOtrKKV4i6XpScJDUij0clj9EVX79FxFw</string>
 		<key>GCM_SENDER_ID</key>
@@ -31,6 +33,6 @@
 		<key>GOOGLE_APP_ID</key>
 		<string>1:722707888554:ios:4c3892d505ee8c460453d3</string>
 		<key>DATABASE_URL</key>
-		<string>https://unitz-app.firebaseio.com</string>
+		<string>https://unitz-app-default-rtdb.firebaseio.com</string>
 	</dict>
 </plist>
