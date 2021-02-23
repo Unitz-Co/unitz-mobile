@@ -229,7 +229,7 @@ PODS:
     - UMCore
   - EXApplication (2.3.0):
     - UMCore
-  - EXConstants (10.0.1):
+  - EXConstants (9.3.5):
     - UMConstantsInterface
     - UMCore
   - EXDevice (2.3.0):
@@ -863,7 +863,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXAppleAuthentication (from `../node_modules/expo-apple-authentication/ios`)
   - EXApplication (from `../node_modules/expo-application/ios`)
-  - EXConstants (from `../node_modules/expo-constants/ios`)
+  - EXConstants (from `../node_modules/expo-linking/node_modules/expo-constants/ios`)
   - EXDevice (from `../node_modules/expo-device/ios`)
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
@@ -1001,7 +1001,7 @@ EXTERNAL SOURCES:
   EXApplication:
     :path: "../node_modules/expo-application/ios"
   EXConstants:
-    :path: "../node_modules/expo-constants/ios"
+    :path: "../node_modules/expo-linking/node_modules/expo-constants/ios"
   EXDevice:
     :path: "../node_modules/expo-device/ios"
   EXErrorRecovery:
@@ -1177,7 +1177,7 @@ SPEC CHECKSUMS:
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXAppleAuthentication: 97d5db59f3fb7aefc6cb06e351ba0828c8982232
   EXApplication: c346c5ab7d1a4607f1863e93490b79fe838148b1
-  EXConstants: 372375a99b0ac129a86507eaaa96da67d6d2dd0f
+  EXConstants: 54d0bf04319d1692c6c7bc03ca151ef7a71705a4
   EXDevice: e6ede72e08f6adc4b224d0628a9963d394ab9226
   EXErrorRecovery: 16696fe023fb46a32c3b09033abc361cfcf150a7
   EXFileSystem: afe9b1fd937d30270bf5108ba44e2f4a1d1ad694
