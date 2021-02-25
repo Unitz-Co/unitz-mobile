@@ -229,6 +229,10 @@ PODS:
     - UMCore
   - EXApplication (2.3.0):
     - UMCore
+  - EXAV (8.6.0):
+    - UMCore
+    - UMFileSystemInterface
+    - UMPermissionsInterface
   - EXConstants (9.3.5):
     - UMConstantsInterface
     - UMCore
@@ -832,6 +836,11 @@ PODS:
     - React
   - RNShare (4.1.2):
     - React-Core
+  - RNSound (0.11.0):
+    - React
+    - RNSound/Core (= 0.11.0)
+  - RNSound/Core (0.11.0):
+    - React
   - RNSVG (12.1.0):
     - React
   - SDWebImage (5.10.3):
@@ -863,6 +872,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXAppleAuthentication (from `../node_modules/expo-apple-authentication/ios`)
   - EXApplication (from `../node_modules/expo-application/ios`)
+  - EXAV (from `../node_modules/expo-av/ios`)
   - EXConstants (from `../node_modules/expo-linking/node_modules/expo-constants/ios`)
   - EXDevice (from `../node_modules/expo-device/ios`)
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
@@ -935,6 +945,7 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSha256 (from `../node_modules/react-native-sha256`)
   - RNShare (from `../node_modules/react-native-share`)
+  - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - UMAppLoader (from `../node_modules/unimodules-app-loader/ios`)
   - UMBarCodeScannerInterface (from `../node_modules/unimodules-barcode-scanner-interface/ios`)
@@ -1000,6 +1011,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-apple-authentication/ios"
   EXApplication:
     :path: "../node_modules/expo-application/ios"
+  EXAV:
+    :path: "../node_modules/expo-av/ios"
   EXConstants:
     :path: "../node_modules/expo-linking/node_modules/expo-constants/ios"
   EXDevice:
@@ -1138,6 +1151,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-sha256"
   RNShare:
     :path: "../node_modules/react-native-share"
+  RNSound:
+    :path: "../node_modules/react-native-sound"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   UMAppLoader:
@@ -1177,6 +1192,7 @@ SPEC CHECKSUMS:
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXAppleAuthentication: 97d5db59f3fb7aefc6cb06e351ba0828c8982232
   EXApplication: c346c5ab7d1a4607f1863e93490b79fe838148b1
+  EXAV: 1f679b57367f8889b5ea15067413c9e2d95039fb
   EXConstants: 54d0bf04319d1692c6c7bc03ca151ef7a71705a4
   EXDevice: e6ede72e08f6adc4b224d0628a9963d394ab9226
   EXErrorRecovery: 16696fe023fb46a32c3b09033abc361cfcf150a7
@@ -1279,6 +1295,7 @@ SPEC CHECKSUMS:
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
   RNSha256: c6f68c850bf8315c95e2508667e8c908bd9f8487
   RNShare: d22507fa5e80c72f236b5622556cf831de5b1e93
+  RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
