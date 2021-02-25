@@ -9,11 +9,11 @@ import {
 
 import Providers from '@uz/components/Providers';
 import StyleManager from '@vl/gstyles/StyleManager';
-import ContentProvider from '@uz/components/ContentfulProvider';
-import AuthProvider from '@uz/components/AuthProvider';
-import LayoutProvider from '@uz/components/LayoutProvider';
-import RefProvider from '@uz/components/RefProvider';
-import PNProvider from '@uz/components/PNProvider';
+import ContentProvider from '@uz/unitz-providers/ContentfulProvider';
+import AuthProvider from '@uz/unitz-providers/AuthProvider';
+import LayoutProvider from '@uz/unitz-providers/LayoutProvider';
+import RefProvider from '@uz/unitz-providers/RefProvider';
+import PNProvider from '@uz/unitz-providers/PNProvider';
 import { LoadableProvider } from '@uz/components/Loadable';
 import I18nProvider from '@uz/mod-translations/Provider';
 // import IAPProvider from '@na/components/IAPProvider';
