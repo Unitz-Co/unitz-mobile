@@ -1,5 +1,14 @@
 
 import * as React from 'react';
+
+/* polyfills */
+/** URL polyfill */
+import 'react-native-url-polyfill/auto';
+
+// load native config
+import '@vl/mod-config/native';
+
+
 // import 'react-native-gesture-handler';
 import 'expo-splash-screen';
 
