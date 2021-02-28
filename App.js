@@ -20,6 +20,7 @@ import Providers from '@uz/components/Providers';
 import StyleManager from '@vl/gstyles/StyleManager';
 import ContentProvider from '@uz/unitz-providers/ContentfulProvider';
 import AuthProvider from '@uz/unitz-providers/AuthProvider';
+import PresenceProvider from '@uz/unitz-providers/PresenceProvider';
 import LayoutProvider from '@uz/unitz-providers/LayoutProvider';
 import RefProvider from '@uz/unitz-providers/RefProvider';
 import PNProvider from '@uz/unitz-providers/PNProvider';
@@ -36,6 +37,7 @@ const App = () => (
     I18nProvider,
     LoadableProvider,
     AuthProvider,
+    PresenceProvider,
     PNProvider,
     ContentProvider,
     StyleManager,
