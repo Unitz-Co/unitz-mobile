@@ -2,47 +2,44 @@
 allow_mixing
 rectangle MobileApp {
   together {
-    together {
-      package Screens {
-        rectangle Screen1 {
-          component View1
-          component Data1
-          Data1 --> View1
-          Models <-- Data1
-        }
-        rectangle Screen2 {
-          component View2
-          component Data2
-          Data2 --> View2
-          Models <-- Data2
-        }
+    package Screens {
+      rectangle Screen1 {
+        component View1
+        component Data1
+        Models <-ri- Data1
       }
-      package Components {
-        rectangle Component1 {
-          component ComView1
-          component ComData1
-          ComData1 --> ComView1
-        }
-        rectangle Component2 {
-          component ComView2
-          component ComData2
-          ComData2 --> ComView2
-        }
+      rectangle Screen2 {
+        component View2
+        component Data2
+        Models <-ri- Data2
       }
     }
-    together {
-      package Models {
-        rectangle UserModel
-        rectangle AdvisorModel
-        rectangle TransactionModel
-        rectangle ProfileModel
+    package Components {
+      rectangle Component1 {
+        component ComView1
+        component ComData1
+        Models <-ri- ComData1
       }
-      package Providers {
-        rectangle AuthProvider
-        rectangle I18nProvider
-        rectangle OthersProviders
+      rectangle Component2 {
+        component ComView2
+        component ComData2
+        Models <-ri- ComData2
       }
     }
+  }
+  together {
+    package Models {
+      rectangle UserModel
+      rectangle AdvisorModel
+      rectangle TransactionModel
+      rectangle ProfileModel
+    }
+    package Providers {
+      rectangle AuthProvider
+      rectangle I18nProvider
+      rectangle OthersProviders
+    }
+    Models -ri- Providers
   }
   
   together {
@@ -56,6 +53,9 @@ rectangle MobileApp {
         collections hooks
         collections utils
         collections translations
+        ' layout connectors
+        hooks -[hidden]- utils
+        gstyle -[hidden]- translations
       }
       package "3rd party libraries" {
         collections Navigation
@@ -90,17 +90,78 @@ rectangle MobileApp {
 
 StateMan ---> Network
 StateMan ---> LocalStorage
+
 cloud Internet
+Network ----------------> Internet
 
-Network --> Internet
-rectangle Services {
-  rectangle "Firebase Auth"
-  rectangle "Firebase Functions"
-  rectangle "Hasura Data"
-  rectangle "Contentful Advisor"
-  rectangle "Contentful Article"
+together {
+  rectangle ExternalService {
+    package TokboxService
+    package FirebaseService {
+      component FirebaseAuth
+      component FirebaseDb
+    }
+    package ContentfulAdvisor {
+      component ContentfulAdvisorApp
+      rectangle ContentfulAdvisorWebhook
+    }
+    ' layout connectors
+    FirebaseService -[hidden]- ContentfulAdvisor
+    ContentfulAdvisor -[hidden]- TokboxService
+  }
+
+  rectangle Services {
+    package HasuraDataService {
+      component HasuraEngine
+      database hasura [
+        Users
+        ---
+        Advisor
+        ---
+        Trasaction
+      ]
+    }
+    package ServiceAuth {
+      rectangle ServiceAuthHook
+      rectangle ServiceAuthApi
+      ServiceAuthHook <-- FirebaseAuth : trigger on \n user create/update
+      ServiceAuthHook --> HasuraDataService : update/sync \n user/advisor profile
+    }
+
+    ContentfulAdvisorWebhook --> ServiceAuthApi : trigger on \n advisor profile change
+    ServiceAuthApi --> HasuraDataService : create/update \n adivsor profile
+
+    package ServicePresence {
+      rectangle ServicePresenceHook
+      ServicePresenceHook <-- FirebaseDb : trigger on \n connection disconnect
+      ServicePresenceHook --> HasuraDataService : update \n presense status
+
+    }
+
+    package ServiceVideo {
+      rectangle ServiceVideoApi
+      ServiceVideoApi <-ri-> TokboxService : request to create \n new session and token
+      ServiceVideoApi --> HasuraDataService : log call session
+    }
+
+    ' layout connectors
+    HasuraDataService -[hidden]-> ServiceAuth
+    ServiceAuth -[hidden]- ServicePresence
+    ServicePresence -[hidden]- ServiceVideo
+
+  }
 }
+Services -[hidden]le- ExternalService
 
-Internet -do-> Services
+Internet ---> Services
+MobileApp ---> HasuraDataService : query/subscribe data
+MobileApp <-- HasuraDataService : push realtime updates
+
+actor Operator
+Operator ---> ContentfulAdvisorApp : manage advisors
+' layout connectors
+MobileApp -[hidden]- Internet
+Internet -[hidden]- Services
+Operator -[hidden]- ExternalService
 
 @enduml
