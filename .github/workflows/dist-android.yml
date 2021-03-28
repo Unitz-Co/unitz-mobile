@@ -1,0 +1,51 @@
+name: Distribute android
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    branches:
+      - "master"
+    # tags:
+    #   - "v*"
+# defaults:
+#   run:
+#     working-directory: ./your_working_dir
+jobs:
+  deploy-heroku:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./ws/packages/unitz-mobile
+    steps:
+      - name: setup node v12
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+          check-latest: true
+      - name: Set up our JDK environment
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 1.8
+      - name: clone workspace
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/ws-app-mobile
+          path: ws
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
+
+      - name: checkout submodule
+        run: |
+          cd ws
+          git config --file .gitmodules --get-regexp url | while read url; do
+            git config --file=.gitmodules $(echo "$url" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.PAT_TOKEN }}:${{ secrets.PAT_TOKEN }}@github.com\//")
+          done
+          git submodule sync
+          git submodule update --init --recursive
+      - name: build modules
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn install
+      - name: build android
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn build:android

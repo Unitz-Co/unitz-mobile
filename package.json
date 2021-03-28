@@ -22,7 +22,7 @@
     "key:android:dev:hash": "keytool -exportcert -alias androiddebugkey -keystore ./android/app/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64",
     "build:ios": "react-native run-ios --configuration=release",
     "postversion": "react-native-version --never-amend",
-    "postinstall": "patch-package",
+    "postinstall:ignore": "patch-package",
     "test": "jest"
   },
   "dependencies": {
