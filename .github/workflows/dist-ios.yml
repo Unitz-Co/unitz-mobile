@@ -11,7 +11,7 @@ on:
 #   run:
 #     working-directory: ./your_working_dir
 jobs:
-  deploy-heroku:
+  dist-fib-ios:
     runs-on: macOS-latest
     strategy:
       matrix:

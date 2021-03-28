@@ -11,7 +11,7 @@ on:
 #   run:
 #     working-directory: ./your_working_dir
 jobs:
-  deploy-heroku:
+  dist-fib-android:
     runs-on: ubuntu-latest
     env:
       working-directory: ./ws/packages/unitz-mobile
