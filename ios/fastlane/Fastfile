@@ -93,6 +93,7 @@ platform :ios do
 
     match(
       type: match_type,
+      git_url: ENV["GIT_REPO_URL"],
       keychain_name: ENV["CI_KEYCHAIN_NAME"],
       keychain_password: ENV["CI_KEYCHAIN_PASSWORD"],
       readonly: true
