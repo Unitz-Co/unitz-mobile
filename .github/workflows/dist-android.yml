@@ -4,7 +4,7 @@ name: Distribute android
 on:
   push:
     branches:
-      - "master"
+      - "release/android"
     # tags:
     #   - "v*"
 # defaults:
