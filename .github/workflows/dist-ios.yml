@@ -40,26 +40,15 @@ jobs:
           done
           git submodule sync
           git submodule update --init --recursive
-      # - name: build modules
-      #   working-directory: ${{env.working-directory}}
-      #   run: |
-      #     yarn install
-      # - name: install pod
-      #   working-directory: ${{env.working-directory}}
-      #   run: |
-      #     cd ios
-      #     pod install
-      # - name: Create IPA Build
-      #   env:
-      #     APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
-      #     APPLE_ID: ${{ secrets.APPLE_ID }}
-      #     GIT_REPO_URL: ${{ secrets.GIT_REPO_URL }}
-      #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-      #     CI_KEYCHAIN_NAME: ${{ secrets.CI_KEYCHAIN_NAME }}
-      #     CI_KEYCHAIN_PASSWORD: ${{ secrets.CI_KEYCHAIN_PASSWORD }}
-      #     DEVELOPER_TEAM_ID: ${{ secrets.DEVELOPER_TEAM_ID }}
-      #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      #   run: fastlane ios beta
+      - name: build modules
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn install
+      - name: install pod
+        working-directory: ${{env.working-directory}}
+        run: |
+          cd ios
+          pod install
       - name: Create IPA Build
         working-directory: ${{env.working-directory}}
         env:
