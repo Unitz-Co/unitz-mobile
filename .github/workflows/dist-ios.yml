@@ -31,6 +31,13 @@ jobs:
           path: ws
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
+      - name: clone certificates
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/fatstlane-certificates
+          path: fatstlane-certificates
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
 
       - name: checkout submodule
         run: |
@@ -40,6 +47,10 @@ jobs:
           done
           git submodule sync
           git submodule update --init --recursive
+      - name: retrive certs and env
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn config:ios
       - name: build modules
         working-directory: ${{env.working-directory}}
         run: |

@@ -25,7 +25,7 @@ Runs all the tests
 ```
 fastlane android stage
 ```
-Submit a new Beta Build to Google Play
+Submit a new Beta Build to Firebase distribution
 ### android beta
 ```
 fastlane android beta

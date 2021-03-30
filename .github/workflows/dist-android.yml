@@ -49,7 +49,7 @@ jobs:
           done
           git submodule sync
           git submodule update --init --recursive
-      - name: retrive certs
+      - name: retrive certs and env
         working-directory: ${{env.working-directory}}
         run: |
           yarn config:android
