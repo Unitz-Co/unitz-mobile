@@ -11,7 +11,7 @@
     "clean:android": "cd android && ./gradlew clean && rm -rf ./.gradle && cd ../",
     "clean:ios": "cd ios && xcodebuild clean && cd ../",
     "clean:build": "yarn clean:android && yarn clean:ios",
-    "config:android": "cp ../../../fatslane-certificates/credentials/unitzmobile/android/* android/app/",
+    "config:android": "cp ../../../fatstlane-certificates/credentials/unitzmobile/android/* android/app/",
     "build:android:beta": "cd android && fastlane beta",
     "build:android:stage": "cd android && fastlane stage",
     "build:android": "cd android && ./gradlew assembleRelease && cd ../",
