@@ -65,9 +65,6 @@ jobs:
           cd android
           yarn build:android:stage
       - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_ANDROID_APP_ID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          groups: testers
-          file: ${{env.working-directory}}/android/app/build/outputs/apk/app-release.apk
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn dist:android:fib --app ${{env.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
