@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Unitz-Co/fatstlane-certificates
-          path: fatslane-certificates
+          path: fatstlane-certificates
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
 
