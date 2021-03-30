@@ -33,6 +33,13 @@ jobs:
           path: ws
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
+      - name: clone certificates
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/fatstlane-certificates
+          path: certificates
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
 
       - name: checkout submodule
         run: |
@@ -42,6 +49,13 @@ jobs:
           done
           git submodule sync
           git submodule update --init --recursive
+      - name: retrive certs
+        env:
+          GIT_REPO_URL: $(echo "git@github.com:Unitz-Co/fatstlane-certificates.git" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.PAT_TOKEN }}:${{ secrets.PAT_TOKEN }}@github.com\//")
+        run: |
+          cp certificates/credentials/unitzmobile/android/google-play.json ${{env.working-directory}}/android/app/google-play.json
+          cp certificates/credentials/unitzmobile/android/google-services.json ${{env.working-directory}}/android/app/google-services.json
+          cp certificates/credentials/unitzmobile/android/release.keystore ${{env.working-directory}}/android/app/release.keystore
       - name: build modules
         working-directory: ${{env.working-directory}}
         run: |
