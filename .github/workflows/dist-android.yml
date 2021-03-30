@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Unitz-Co/fatstlane-certificates
-          path: certificates
+          path: fatslane-certificates
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
 
@@ -50,10 +50,9 @@ jobs:
           git submodule sync
           git submodule update --init --recursive
       - name: retrive certs
+        working-directory: ${{env.working-directory}}
         run: |
-          cp certificates/credentials/unitzmobile/android/google-play.json ${{env.working-directory}}/android/app/google-play.json
-          cp certificates/credentials/unitzmobile/android/google-services.json ${{env.working-directory}}/android/app/google-services.json
-          cp certificates/credentials/unitzmobile/android/release.keystore ${{env.working-directory}}/android/app/release.keystore
+          yarn config:android
       - name: build modules
         working-directory: ${{env.working-directory}}
         run: |
