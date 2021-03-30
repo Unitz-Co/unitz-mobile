@@ -4,7 +4,7 @@ name: FIB Distribution ios
 on:
   push:
     branches:
-      - "master"
+      - "release/ios"
     # tags:
     #   - "v*"
 # defaults:

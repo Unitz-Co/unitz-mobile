@@ -4,7 +4,8 @@ name: Distribute android
 on:
   push:
     branches:
-      - "release/android"
+      # - "release/android"
+      - "master"
     # tags:
     #   - "v*"
 # defaults:
@@ -48,4 +49,5 @@ jobs:
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
-          yarn build:android
+          cd android
+          yarn build:android:stage
