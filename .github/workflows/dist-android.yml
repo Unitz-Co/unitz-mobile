@@ -50,8 +50,6 @@ jobs:
           git submodule sync
           git submodule update --init --recursive
       - name: retrive certs
-        env:
-          GIT_REPO_URL: $(echo "git@github.com:Unitz-Co/fatstlane-certificates.git" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.PAT_TOKEN }}:${{ secrets.PAT_TOKEN }}@github.com\//")
         run: |
           cp certificates/credentials/unitzmobile/android/google-play.json ${{env.working-directory}}/android/app/google-play.json
           cp certificates/credentials/unitzmobile/android/google-services.json ${{env.working-directory}}/android/app/google-services.json
@@ -60,6 +58,8 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           yarn install
+      - name: Setup kernel for react native, increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
