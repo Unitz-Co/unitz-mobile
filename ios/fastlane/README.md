@@ -25,7 +25,12 @@ Push a new beta build to TestFlight
 ```
 fastlane ios beta
 ```
-Create Signed IPA Build
+Create Signed IPA Build for AppStore
+### ios firebase
+```
+fastlane ios firebase
+```
+Create Signed IPA Build for Firebase
 
 ----
 
