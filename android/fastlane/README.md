@@ -36,6 +36,16 @@ Submit a new Beta Build to Crashlytics Beta
 fastlane android deploy
 ```
 Deploy a new version to the Google Play
+### android update_appicon
+```
+fastlane android update_appicon
+```
+Update appicon
+### android update_splash
+```
+fastlane android update_splash
+```
+Update splash
 
 ----
 

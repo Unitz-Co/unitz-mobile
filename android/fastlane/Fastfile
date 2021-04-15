@@ -42,4 +42,23 @@ platform :android do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
+
+  desc "Update appicon"
+  lane :update_appicon do
+    android_appicon(
+      appicon_image_file: '../../../modules/unitz-assets/Icon.png',
+      appicon_path: 'app/src/main/res/mipmap',
+      generate_rounded: true
+    )
+  end
+  
+  desc "Update splash"
+  lane :update_splash do
+    android_appicon(
+      appicon_image_file: '../../../modules/unitz-assets/splash.png',
+      appicon_icon_types: %i[splash_port splash_land],
+      appicon_path: 'app/src/main/res_t/drawable/splash',
+      appicon_filename: 'splash'
+    )
+  end
 end

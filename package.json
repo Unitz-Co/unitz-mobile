@@ -12,7 +12,7 @@
     "clean:android": "cd android && ./gradlew clean && rm -rf ./.gradle && cd ../",
     "clean:ios": "cd ios && xcodebuild clean && rm -Rf builds && cd ../",
     "clean:build": "yarn clean:android && yarn clean:ios",
-    "config:env": "cp ../../../fatstlane-certificates/env/unitzmobile/* env/",
+    "config:env": "rsync -aP ../../../env/packages/unitz-mobile/ ./",
     "config:android": "cp ../../../fatstlane-certificates/credentials/unitzmobile/android/* android/app/ && yarn config:env",
     "config:ios": "yarn config:env",
     "dist:android:fib": "firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk",

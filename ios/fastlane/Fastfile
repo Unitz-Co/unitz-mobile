@@ -207,10 +207,36 @@ platform :ios do
   desc "Create Signed IPA Build for AppStore"
   lane :beta do
     build
+    upload_to_testflight
+  end
+
+  desc "Upload to testfligh for testing"
+  lane :release do
+    upload_to_testflight
   end
 
   desc "Create Signed IPA Build for Firebase"
   lane :firebase do
     build_adhoc
   end
+
+  desc "Update appicon"
+  lane :update_appicon do
+    appicon(
+      appicon_devices: [:ipad, :iphone, :ios_marketing],
+      appicon_path: "unitzmobile/Images.xcassets",
+      appicon_image_file: '../../../modules/unitz-assets/Icon.jpg'
+    )
+  end
+
+  desc "Update splash"
+  lane :splash_screen do
+    appicon(
+      appicon_image_file: '../../../modules/unitz-assets/splash.png',
+      appicon_devices: [:universal],
+      appicon_path: "unitzmobile/Images.xcassets",
+      appicon_name: 'SplashScreen.imageset'
+    )
+  end
+
 end

@@ -26,11 +26,26 @@ Push a new beta build to TestFlight
 fastlane ios beta
 ```
 Create Signed IPA Build for AppStore
+### ios release
+```
+fastlane ios release
+```
+Upload to testfligh for testing
 ### ios firebase
 ```
 fastlane ios firebase
 ```
 Create Signed IPA Build for Firebase
+### ios update_appicon
+```
+fastlane ios update_appicon
+```
+Update appicon
+### ios splash_screen
+```
+fastlane ios splash_screen
+```
+Update splash
 
 ----
 
