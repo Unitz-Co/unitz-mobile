@@ -130,7 +130,18 @@ platform :ios do
     commit_version_bump(
       message: "Version Bump",# create a commit with a custom message
       xcodeproj: XCODE_PROJECT,
+      ignore: /Fastfile/,
     )
+
+    add_git_tag(
+      grouping: "fastlane-builds",
+      prefix: "v",
+      postfix: "-beta",
+    )
+    
+    # push_to_git_remote(
+    #   tags: true,    # optional, default: true
+    # )
   end
 
 
