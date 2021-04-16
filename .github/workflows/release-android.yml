@@ -39,6 +39,13 @@ jobs:
           path: env
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
+      - name: clone credentials
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/credentials
+          path: credentials
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
 
       - name: checkout submodule
         run: |

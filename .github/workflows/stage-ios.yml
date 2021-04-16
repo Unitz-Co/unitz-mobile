@@ -31,7 +31,7 @@ jobs:
           path: ws
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
-      - name: clone certificates
+      - name: clone env
         uses: actions/checkout@v2
         with:
           repository: Unitz-Co/env
