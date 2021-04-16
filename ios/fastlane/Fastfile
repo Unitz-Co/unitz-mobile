@@ -134,14 +134,15 @@ platform :ios do
     )
 
     add_git_tag(
-      grouping: "fastlane-builds",
-      prefix: "v",
-      postfix: "-beta",
+      grouping: "iosbeta",
+      includes_lane: false,
+      prefix: "v#{lane_context[SharedValues::VERSION_NUMBER]}.",
+      postfix: "",
     )
     
-    # push_to_git_remote(
-    #   tags: true,    # optional, default: true
-    # )
+    push_to_git_remote(
+      tags: true,    # optional, default: true
+    )
   end
 
 
