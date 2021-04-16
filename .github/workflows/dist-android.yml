@@ -33,11 +33,11 @@ jobs:
           path: ws
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
-      - name: clone certificates
+      - name: clone env
         uses: actions/checkout@v2
         with:
-          repository: Unitz-Co/fatstlane-certificates
-          path: fatstlane-certificates
+          repository: Unitz-Co/env
+          path: env
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
 

@@ -23,13 +23,20 @@ platform :android do
 
   desc "Submit a new Beta Build to Firebase distribution"
   lane :stage do
-    
+    increment_version_code(
+      gradle_file_path: "app/build.gradle",
+      #ext_constant_name: "test"
+      #app_folder_name:"app"
+    )
     gradle(task: "assembleRelease")
     
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
+    increment_version_code(
+      gradle_file_path: "app/build.gradle",
+    )
     gradle(task: "clean assembleRelease")
     crashlytics
   
@@ -39,6 +46,9 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
+    increment_version_code(
+      gradle_file_path: "app/build.gradle",
+    )
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
