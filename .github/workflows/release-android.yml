@@ -1,18 +1,17 @@
-name: Distribute android
+name: release android
 
 # Run this workflow every time a new commit pushed to your repository
 on:
   push:
     branches:
-      # - "release/android"
-      - "master"
+      - "release/android"
     # tags:
     #   - "v*"
 # defaults:
 #   run:
 #     working-directory: ./your_working_dir
 jobs:
-  dist-fib-android:
+  release-android:
     runs-on: ubuntu-latest
     env:
       working-directory: ./ws/packages/unitz-mobile
@@ -63,8 +62,4 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           cd android
-          yarn build:android:stage
-      - name: upload artifact to Firebase App Distribution
-        working-directory: ${{env.working-directory}}
-        run: |
-          yarn dist:android:fib --app ${{env.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+          yarn build:android:release

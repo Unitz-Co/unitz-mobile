@@ -1,17 +1,17 @@
-name: stage Distribution ios
+name: Beta Distribution ios
 
 # Run this workflow every time a new commit pushed to your repository
 on:
   push:
     branches:
-      - "stage/ios"
+      - "beta/ios"
     # tags:
     #   - "v*"
 # defaults:
 #   run:
 #     working-directory: ./your_working_dir
 jobs:
-  stage-ios:
+  beta-ios:
     runs-on: macOS-latest
     strategy:
       matrix:
@@ -34,8 +34,8 @@ jobs:
       - name: clone certificates
         uses: actions/checkout@v2
         with:
-          repository: Unitz-Co/env
-          path: env
+          repository: Unitz-Co/fatstlane-certificates
+          path: fatstlane-certificates
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
 
@@ -74,10 +74,5 @@ jobs:
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         run: |
           cd ios
-          fastlane firebase
-
-      - name: upload artifact to Firebase App Distribution
-        working-directory: ${{env.working-directory}}
-        run: |
-          yarn dist:ios:fib --app ${{env.FIREBASE_IOS_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+          fastlane beta
 

@@ -1,4 +1,4 @@
-name: FIB Distribution ios
+name: release  ios
 
 # Run this workflow every time a new commit pushed to your repository
 on:
@@ -11,7 +11,7 @@ on:
 #   run:
 #     working-directory: ./your_working_dir
 jobs:
-  dist-fib-ios:
+  release-ios:
     runs-on: macOS-latest
     strategy:
       matrix:

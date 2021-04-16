@@ -37,20 +37,31 @@ platform :android do
     increment_version_code(
       gradle_file_path: "app/build.gradle",
     )
-    gradle(task: "clean assembleRelease")
-    crashlytics
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+    )
+    # crashlytics
+    upload_to_play_store(
+      track: 'internal',
+      release_status: 'draft',
+      apk: 'app/build/outputs/apk/release/app-release.apk',
+    )
   
-    # sh "your_script.sh"
-    # You can also use other beta testing services here
   end
 
   desc "Deploy a new version to the Google Play"
-  lane :deploy do
+  lane :release do
     increment_version_code(
       gradle_file_path: "app/build.gradle",
     )
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+    )
+    upload_to_play_store(
+      apk: 'app/build/outputs/apk/release/app-release.apk',
+    )
   end
 
   desc "Update appicon"
