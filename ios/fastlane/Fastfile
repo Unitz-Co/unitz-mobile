@@ -239,4 +239,33 @@ platform :ios do
     )
   end
 
+
+  desc 'Generate screenshots for app store'
+  lane :generate_screenshots do
+    capture_screenshots(
+      reinstall_app: true,
+      clean: true,
+      test_without_building: true,
+    )
+  end
+
+  desc 'Upload screenshots to app store'
+  lane :upload_screenshots do
+    deliver(
+      force: true,
+      skip_screenshots: false,
+      skip_metadata: true,
+      skip_binary_upload: true,
+  )
+  end
+
+  desc 'Upload metadata to app store'
+  lane :upload_metadata do
+    deliver(
+      force: true,
+      skip_screenshots: false,
+      skip_metadata: false,
+      skip_binary_upload: true,
+  )
+  end
 end

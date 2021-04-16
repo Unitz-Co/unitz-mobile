@@ -46,6 +46,21 @@ Update appicon
 fastlane ios splash_screen
 ```
 Update splash
+### ios generate_screenshots
+```
+fastlane ios generate_screenshots
+```
+Generate screenshots for app store
+### ios upload_screenshots
+```
+fastlane ios upload_screenshots
+```
+Upload screenshots to app store
+### ios upload_metadata
+```
+fastlane ios upload_metadata
+```
+Upload metadata to app store
 
 ----
 

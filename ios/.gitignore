@@ -5,10 +5,13 @@ fastlane/report.xml
 fastlane/Preview.html
 
 # snapshot generated screenshots
-fastlane/screenshots
+# fastlane/screenshots
 
 # scan temporary files
 fastlane/test_output
+
+# derived generated
+fastlane/derived
 
 # fastlane builds
 builds/*
