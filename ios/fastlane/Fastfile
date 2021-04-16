@@ -77,59 +77,60 @@ platform :ios do
       xcodeproj: XCODE_PROJECT,
     )
 
-    settings_to_override = {
-      :BUNDLE_IDENTIFIER => MY_APP_ID,
-      :PROVISIONING_PROFILE_SPECIFIER => MY_PROFILE,
-      :DEVELOPMENT_TEAM => MY_TEAM,
-    }
+    # settings_to_override = {
+    #   :BUNDLE_IDENTIFIER => MY_APP_ID,
+    #   :PROVISIONING_PROFILE_SPECIFIER => MY_PROFILE,
+    #   :DEVELOPMENT_TEAM => MY_TEAM,
+    # }
 
-    create_keychain(
-      name: ENV["CI_KEYCHAIN_NAME"],
-      password: ENV["CI_KEYCHAIN_PASSWORD"],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      lock_when_sleeps: false
-    )
-
-    match(
-      type: match_type,
-      git_url: ENV["GIT_REPO_URL"],
-      keychain_name: ENV["CI_KEYCHAIN_NAME"],
-      keychain_password: ENV["CI_KEYCHAIN_PASSWORD"],
-      readonly: true
-    )
-
-
-    update_project_team( # Set the right team on your project
-      teamid: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
-    )
-
-    update_code_signing_settings(
-      use_automatic_signing: false,
-      path: XCODE_PROJECT,
-      code_sign_identity: code_sign_identity,
-      bundle_identifier: MY_APP_ID,
-      profile_name: MY_PROFILE
-    )
-
-    build_app(
-      workspace: XCODE_WORKSPACE,
-      scheme: PROJECT_NAME,
-      clean: true,
-      export_method: "app-store",
-      export_options: {
-        provisioningProfiles: {
-          MY_APP_ID => MY_PROFILE
-        }
-      },
-      build_path: "./builds",
-      output_directory: "./builds"
-    )
-
-    # commit_version_bump(
-    #   message: "Version Bump",# create a commit with a custom message
+    # create_keychain(
+    #   name: ENV["CI_KEYCHAIN_NAME"],
+    #   password: ENV["CI_KEYCHAIN_PASSWORD"],
+    #   default_keychain: true,
+    #   unlock: true,
+    #   timeout: 3600,
+    #   lock_when_sleeps: false
     # )
+
+    # match(
+    #   type: match_type,
+    #   git_url: ENV["GIT_REPO_URL"],
+    #   keychain_name: ENV["CI_KEYCHAIN_NAME"],
+    #   keychain_password: ENV["CI_KEYCHAIN_PASSWORD"],
+    #   readonly: true
+    # )
+
+
+    # update_project_team( # Set the right team on your project
+    #   teamid: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+    # )
+
+    # update_code_signing_settings(
+    #   use_automatic_signing: false,
+    #   path: XCODE_PROJECT,
+    #   code_sign_identity: code_sign_identity,
+    #   bundle_identifier: MY_APP_ID,
+    #   profile_name: MY_PROFILE
+    # )
+
+    # build_app(
+    #   workspace: XCODE_WORKSPACE,
+    #   scheme: PROJECT_NAME,
+    #   clean: true,
+    #   export_method: "app-store",
+    #   export_options: {
+    #     provisioningProfiles: {
+    #       MY_APP_ID => MY_PROFILE
+    #     }
+    #   },
+    #   build_path: "./builds",
+    #   output_directory: "./builds"
+    # )
+
+    commit_version_bump(
+      message: "Version Bump",# create a commit with a custom message
+      xcodeproj: XCODE_PROJECT,
+    )
   end
 
 
@@ -199,15 +200,15 @@ platform :ios do
       output_directory: "./builds"
     )
 
-    # commit_version_bump(
-    #   message: "Version Bump",# create a commit with a custom message
-    # )
+    commit_version_bump(
+      message: "Version Bump",# create a commit with a custom message
+    )
   end
 
   desc "Create Signed IPA Build for AppStore"
   lane :beta do
     build
-    upload_to_testflight
+    # upload_to_testflight
   end
 
   desc "Upload to testfligh for testing"
@@ -245,7 +246,7 @@ platform :ios do
     capture_screenshots(
       reinstall_app: true,
       clean: true,
-      test_without_building: true,
+      # test_without_building: true,
     )
   end
 
