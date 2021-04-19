@@ -10,6 +10,7 @@
     "start": "react-native start --reset-cache",
     "clean": "watchman watch-del-all && rm -rf /tmp/metro-* && rm -rf ./node_modules/.cache/babel-loader",
     "clean:android": "cd android && ./gradlew clean && rm -rf ./.gradle && cd ../",
+    "clean:android:build": "yarn clean && rm -rf ./android/app/build",
     "clean:ios": "cd ios && xcodebuild clean && rm -Rf builds && cd ../",
     "clean:build": "yarn clean:android && yarn clean:ios",
     "config:env": "rsync -aP ../../../env/packages/unitz-mobile/ ./",
@@ -17,6 +18,7 @@
     "config:ios": "yarn config:env",
     "dist:android:fib": "firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk",
     "dist:ios:fib": "firebase appdistribution:distribute ios/builds/unitzmobile.ipa",
+    "build:android:debug": "yarn clean:android:build && cd android && ./gradlew assembleDebug",
     "build:android:release": "cd android && fastlane release",
     "build:android:beta": "cd android && fastlane beta",
     "build:android:stage": "cd android && fastlane stage",
@@ -30,6 +32,7 @@
     "key:android:dev:list": "keytool -list -v -alias androiddebugkey -keystore ./android/app/debug.keystore -storepass android -keypass android",
     "key:android:dev:hash": "keytool -exportcert -alias androiddebugkey -keystore ./android/app/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64",
     "build:ios": "rm -Rf ios/builds && react-native run-ios --configuration=release",
+    "build:ios:debug": "rm -Rf ios/builds && react-native run-ios --configuration=debug",
     "postversion": "react-native-version --never-amend",
     "postinstall:ignore": "patch-package",
     "test": "jest"
