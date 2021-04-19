@@ -26,6 +26,7 @@ import RefProvider from '@uz/unitz-providers/RefProvider';
 import PNProvider from '@uz/unitz-providers/PNProvider';
 import { LoadableProvider } from '@uz/components/Loadable';
 import I18nProvider from '@uz/unitz-providers/I18nProvider';
+import TestProvider from '@uz/unitz-providers/TestProvider';
 // import IAPProvider from '@na/components/IAPProvider';
 
 import NSApp from "@uz/unitz-app";
@@ -34,6 +35,7 @@ import NSApp from "@uz/unitz-app";
 const App = () => (
   <Providers providers={[
     RefProvider,
+    TestProvider,
     I18nProvider,
     LoadableProvider,
     AuthProvider,
