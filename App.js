@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 
 /* polyfills */
@@ -8,13 +7,10 @@ import 'react-native-url-polyfill/auto';
 // load native config
 import '@vl/mod-config/native';
 
-
 // import 'react-native-gesture-handler';
 import 'expo-splash-screen';
 
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Providers from '@uz/components/Providers';
 import StyleManager from '@vl/gstyles/StyleManager';
@@ -29,23 +25,28 @@ import I18nProvider from '@uz/unitz-providers/I18nProvider';
 import TestProvider from '@uz/unitz-providers/TestProvider';
 // import IAPProvider from '@na/components/IAPProvider';
 
-import NSApp from "@uz/unitz-app";
-
+import NSApp from '@uz/unitz-app';
+import ValidateProvider from '@uz/unitz-providers/ValidateProvider';
+import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 
 const App = () => (
-  <Providers providers={[
-    RefProvider,
-    TestProvider,
-    I18nProvider,
-    LoadableProvider,
-    AuthProvider,
-    PresenceProvider,
-    PNProvider,
-    ContentProvider,
-    StyleManager,
-    SafeAreaProvider,
-    LayoutProvider,
-  ]}>
+  <Providers
+    providers={[
+      RefProvider,
+      TestProvider,
+      ValidateProvider,
+      I18nProvider,
+      LoadableProvider,
+      AuthProvider,
+      PaymentProvider,
+      PresenceProvider,
+      PNProvider,
+      ContentProvider,
+      StyleManager,
+      SafeAreaProvider,
+      LayoutProvider,
+    ]}
+  >
     <NSApp />
   </Providers>
 );

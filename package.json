@@ -77,6 +77,7 @@
     "babel-plugin-import-graphql": "^2.8.1",
     "babel-plugin-inline-dotenv": "^1.6.0",
     "babel-plugin-inline-import": "^3.0.0",
+    "card-validator": "^8.1.0",
     "contentful": "^8.1.7",
     "cross-fetch": "^3.0.6",
     "expo": "~39.0.2",
@@ -116,6 +117,7 @@
     "react-native-fast-image": "^8.3.4",
     "react-native-fbsdk": "^3.0.0",
     "react-native-gesture-handler": "~1.7.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.3",
     "react-native-material-dropdown": "^0.11.1",
     "react-native-modal": "^11.10.0",
     "react-native-paper": "^4.3.0",
@@ -137,6 +139,7 @@
     "react-native-youtube-iframe": "^2.0.1",
     "rxjs": "^6.6.6",
     "subscriptions-transport-ws": "^0.9.18",
+    "tipsi-stripe": "^9.0.0",
     "ws": "^7.4.3",
     "yup": "^0.31.0"
   },
