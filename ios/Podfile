@@ -9,7 +9,7 @@ target 'unitzmobile' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
-  pod 'Stripe', '~> 21.3.1'
+  # pod 'Stripe', '~> 21.3.1'
   # Uncomment the code below to enable Flipper.
   #
   # You should not install Flipper in CI environments when creating release

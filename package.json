@@ -139,7 +139,6 @@
     "react-native-youtube-iframe": "^2.0.1",
     "rxjs": "^6.6.6",
     "subscriptions-transport-ws": "^0.9.18",
-    "tipsi-stripe": "^9.0.0",
     "ws": "^7.4.3",
     "yup": "^0.31.0"
   },
