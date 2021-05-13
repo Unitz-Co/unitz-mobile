@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Nullable;
-
+import android.webkit.WebView;
 public class MainApplication extends Application implements ReactApplication {
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
     new BasePackageList().getPackageList()
@@ -83,7 +83,7 @@ public class MainApplication extends Application implements ReactApplication {
     if (!BuildConfig.DEBUG) {
       UpdatesController.initialize(this);
     }
-
+    WebView.setWebContentsDebuggingEnabled(true);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
