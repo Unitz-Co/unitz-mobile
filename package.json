@@ -73,7 +73,6 @@
     "@vl/navigation-native": "1.0.0",
     "@vl/polyfill": "1.0.0",
     "@vl/redata": "1.0.0",
-    "add": "^2.0.6",
     "assert": "^2.0.0",
     "babel-plugin-import-graphql": "^2.8.1",
     "babel-plugin-inline-dotenv": "^1.6.0",
@@ -143,7 +142,6 @@
     "rxjs": "^6.6.6",
     "subscriptions-transport-ws": "^0.9.18",
     "ws": "^7.4.3",
-    "yarn": "^1.22.10",
     "yup": "^0.31.0"
   },
   "devDependencies": {
