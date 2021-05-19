@@ -34,6 +34,7 @@
     "build:ios": "rm -Rf ios/builds && react-native run-ios --configuration=release",
     "build:ios:debug": "rm -Rf ios/builds && react-native run-ios --configuration=debug",
     "postversion": "react-native-version --never-amend",
+    "postinstall": "yarn nuke:modules",
     "postinstall:ignore": "patch-package",
     "test": "jest"
   },
