@@ -80,8 +80,7 @@ jobs:
       - name: upload artifact to Firebase App Distribution
         working-directory: ${{env.working-directory}}
         run: |
-          yarn global add firebase-tools
-          yarn dist:android:fib --app ${{env.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+          yarn dist:android:fib --app ${{secrets.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
       - uses: iRoachie/slack-github-actions@v2.3.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
