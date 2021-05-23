@@ -81,7 +81,8 @@ jobs:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         run: |
-          sudo yarn build:ios:stage
+          cd ios
+          fastlane firebase
       - name: upload artifact to Firebase App Distribution
         working-directory: ${{env.working-directory}}
         run: |
