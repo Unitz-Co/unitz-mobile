@@ -69,7 +69,6 @@ jobs:
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
-          cd android
           yarn build:android:stage
       - name: upload artifact to Firebase App Distribution
         working-directory: ${{env.working-directory}}

@@ -68,5 +68,4 @@ jobs:
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
-          cd android
           yarn build:android:beta

@@ -23,19 +23,27 @@ platform :android do
 
   desc "Submit a new Beta Build to Firebase distribution"
   lane :stage do
-    increment_version_code(
-      gradle_file_path: "app/build.gradle",
-      #ext_constant_name: "test"
-      #app_folder_name:"app"
+    # increment_version_code(
+    #   gradle_file_path: "app/build.gradle",
+    #   ext_constant_name: "test"
+    #   app_folder_name:"app"
+    # )
+    # android_set_version_code(
+    #   version_code: 17, # optional, if not specified, Version Code will be incremented
+    # )
+    android_set_version_code(
+      version_code: (Time.now.to_i() - 1577840400) / 100
     )
     gradle(task: "assembleRelease")
-    
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
-    increment_version_code(
-      gradle_file_path: "app/build.gradle",
+    # increment_version_code(
+    #   gradle_file_path: "app/build.gradle",
+    # )
+    android_set_version_code(
+      version_code: (Time.now.to_i() - 1577840400) / 100
     )
     gradle(
       task: 'assemble',
@@ -52,8 +60,11 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :release do
-    increment_version_code(
-      gradle_file_path: "app/build.gradle",
+    # increment_version_code(
+    #   gradle_file_path: "app/build.gradle",
+    # )
+    android_set_version_code(
+      version_code: (Time.now.to_i() - 1577840400) / 100
     )
     gradle(
       task: 'assemble',
