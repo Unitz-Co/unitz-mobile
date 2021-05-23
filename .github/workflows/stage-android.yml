@@ -17,6 +17,10 @@ jobs:
     env:
       working-directory: ./ws/packages/unitz-mobile
     steps:
+      - name: Slack Notification Start
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       - name: setup node v12
         uses: actions/setup-node@v2
         with:
@@ -72,8 +76,8 @@ jobs:
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
-          yarn build:android:stage
+          sudo yarn build:android:stage
       - name: upload artifact to Firebase App Distribution
         working-directory: ${{env.working-directory}}
         run: |
-          yarn dist:android:fib --app ${{env.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+          sudo yarn dist:android:fib --app ${{env.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
