@@ -88,6 +88,7 @@ GEM
     fastlane-plugin-appicon (0.16.0)
       json
       mini_magick (>= 4.9.4, < 5.0.0)
+    fastlane-plugin-versioning_ios (0.1.0)
     gh_inspector (1.1.3)
     google-api-client (0.38.0)
       addressable (~> 2.5, >= 2.5.1)
@@ -201,6 +202,7 @@ PLATFORMS
 DEPENDENCIES
   fastlane
   fastlane-plugin-appicon
+  fastlane-plugin-versioning_ios
 
 BUNDLED WITH
    1.17.2

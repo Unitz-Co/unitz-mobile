@@ -19,6 +19,10 @@ jobs:
     env:
       working-directory: ./ws/packages/unitz-mobile
     steps:
+      - name: Slack Notification Start
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       - name: setup node v12
         uses: actions/setup-node@v2
         with:
@@ -74,11 +78,14 @@ jobs:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         run: |
-          cd ios
-          fastlane firebase
-
+          sudo yarn build:ios:stage
       - name: upload artifact to Firebase App Distribution
         working-directory: ${{env.working-directory}}
         run: |
-          yarn dist:ios:fib --app ${{env.FIREBASE_IOS_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
-
+          yarn dist:ios:fib --app ${{secrets.FIREBASE_IOS_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+      - uses: iRoachie/slack-github-actions@v2.3.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        with:
+          status: ${{ job.status }}
+        if: ${{ always() }}

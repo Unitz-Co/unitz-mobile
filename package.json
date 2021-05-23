@@ -22,6 +22,7 @@
     "build:android:release": "cd android && fastlane release",
     "build:android:beta": "cd android && fastlane beta",
     "build:android:stage": "cd android && fastlane stage",
+    "build:ios:stage": "cd ios && fastlane firebase",
     "build:android": "cd android && ./gradlew assembleRelease && cd ../",
     "build:android:aab": "cd android && ./gradlew bundleRelease -Phermes=true && cd ../",
     "deploy:android": "react-native run-android --variant=release",
