@@ -231,22 +231,22 @@ platform :ios do
       output_directory: "./builds"
     )
 
-    commit_version_bump(
-      message: "!bump",# create a commit with a custom message
-      xcodeproj: XCODE_PROJECT,
-      ignore: /Fastfile/,
-    )
+    # commit_version_bump(
+    #   message: "!bump",# create a commit with a custom message
+    #   xcodeproj: XCODE_PROJECT,
+    #   ignore: /Fastfile/,
+    # )
 
-    add_git_tag(
-      grouping: "ios-stage",
-      includes_lane: false,
-      prefix: "v#{lane_context[SharedValues::VERSION_NUMBER]}.",
-      postfix: "",
-    )
+    # add_git_tag(
+    #   grouping: "ios-stage",
+    #   includes_lane: false,
+    #   prefix: "v#{lane_context[SharedValues::VERSION_NUMBER]}.",
+    #   postfix: "",
+    # )
     
-    push_to_git_remote(
-      tags: true,    # optional, default: true
-    )
+    # push_to_git_remote(
+    #   tags: true,    # optional, default: true
+    # )
   end
 
   desc "Create Signed IPA Build for AppStore"
