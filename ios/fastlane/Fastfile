@@ -160,6 +160,7 @@ platform :ios do
     configuration_name = "Release"
     match_type = "adhoc"
     code_sign_identity = "iPhone Distribution"
+    # code_sign_identity = "iPhone Developer"
     MY_APP_ID = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
     MY_PROFILE = "match AdHoc #{MY_APP_ID}"
     MY_TEAM = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
@@ -190,10 +191,26 @@ platform :ios do
     create_keychain(
       name: ENV["CI_KEYCHAIN_NAME"],
       password: ENV["CI_KEYCHAIN_PASSWORD"],
-      default_keychain: true,
+      default_keychain: false,
       unlock: true,
-      timeout: 3600,
+      timeout: false,
       lock_when_sleeps: false
+    )
+
+    match(
+      type: "appstore",
+      git_url: ENV["GIT_REPO_URL"],
+      keychain_name: ENV["CI_KEYCHAIN_NAME"],
+      keychain_password: ENV["CI_KEYCHAIN_PASSWORD"],
+      readonly: true
+    )
+
+    match(
+      type: "development",
+      git_url: ENV["GIT_REPO_URL"],
+      keychain_name: ENV["CI_KEYCHAIN_NAME"],
+      keychain_password: ENV["CI_KEYCHAIN_PASSWORD"],
+      readonly: true
     )
 
     match(
