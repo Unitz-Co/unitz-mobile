@@ -51,7 +51,7 @@ platform :android do
 
     upload_to_play_store(
       track: 'internal',
-      release_status: 'completed',
+      release_status: 'draft',
       skip_upload_screenshots: true,
       skip_upload_images: true,
       apk: 'app/build/outputs/apk/release/app-release.apk',
@@ -70,7 +70,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'production',
-      release_status: 'inProgress',
+      release_status: 'draft',
       apk: 'app/build/outputs/apk/release/app-release.apk',
     )
   end
