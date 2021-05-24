@@ -245,7 +245,8 @@ platform :ios do
         }
       },
       build_path: "./builds",
-      output_directory: "./builds"
+      output_directory: "./builds/outputs",
+      sdk: "iOS 11.0"
     )
 
     # commit_version_bump(
