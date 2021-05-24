@@ -1,17 +1,16 @@
-name: Beta ios
+name: Daily ios
 
 # Run this workflow every time a new commit pushed to your repository
 on:
-  push:
-    branches:
-      - "beta/ios"
+  schedule:
+    - cron:  '1 1 * * *'
     # tags:
     #   - "v*"
 # defaults:
 #   run:
 #     working-directory: ./your_working_dir
 jobs:
-  beta-ios:
+  daily-ios:
     runs-on: macOS-latest
     strategy:
       matrix:
@@ -34,8 +33,15 @@ jobs:
       - name: clone env
         uses: actions/checkout@v2
         with:
-          repository: Unitz-Co/env
-          path: env
+          repository: Unitz-Co/env-app-mobile
+          path: config/env-app-mobile
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
+      - name: clone credentials
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/credentials
+          path: config/credentials
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
 
@@ -55,6 +61,7 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           yarn install
+          yarn nuke:modules
       - name: install pod
         working-directory: ${{env.working-directory}}
         run: |
@@ -75,5 +82,14 @@ jobs:
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         run: |
           cd ios
-          fastlane beta
-
+          fastlane firebase
+      - name: upload artifact to Firebase App Distribution
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn dist:ios:fib --app ${{secrets.FIREBASE_IOS_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+      - uses: iRoachie/slack-github-actions@v2.3.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        with:
+          status: ${{ job.status }}
+        if: ${{ always() }}
