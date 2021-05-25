@@ -34,7 +34,7 @@ jobs:
           java-version: 1.8
       - name: clean up before build
         run: |
-          rm -Rf package.json
+          rm -Rf *
       - name: clone workspace
         uses: actions/checkout@v2
         with:
