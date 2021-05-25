@@ -34,7 +34,7 @@ platform :android do
     android_set_version_code(
       version_code: (Time.now.to_i() - 1577840400) / 100
     )
-    gradle(task: "assembleRelease")
+    # gradle(task: "assembleRelease")
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
