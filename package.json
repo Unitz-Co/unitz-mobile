@@ -17,7 +17,7 @@
     "config:android": "cp ../../../config/credentials/packages/unitz-mobile/android/* android/app/ && yarn config:env",
     "config:ios": "cp ../../../config/credentials/packages/unitz-mobile/ios/* ios/ && yarn config:env",
     "dist:android:fib": "firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk",
-    "dist:ios:fib": "firebase appdistribution:distribute ios/builds/unitzmobile.ipa",
+    "dist:ios:fib": "firebase appdistribution:distribute ios/builds/outputs/unitzmobile.ipa",
     "build:android:debug": "yarn clean:android:build && cd android && ./gradlew assembleDebug",
     "build:android:release": "cd android && fastlane release",
     "build:android:beta": "cd android && fastlane beta",
