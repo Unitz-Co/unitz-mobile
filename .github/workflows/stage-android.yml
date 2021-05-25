@@ -71,6 +71,8 @@ jobs:
         run: |
           yarn install
           yarn nuke:modules
+          find '../../modules/' -name 'node_modules'
+          find '../../packages/' -name 'node_modules'
       - name: Setup kernel for react native, increase watchers
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
       - name: build android
