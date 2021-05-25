@@ -21,7 +21,7 @@
     "build:android:debug": "yarn clean:android:build && cd android && ./gradlew assembleDebug",
     "build:android:release": "cd android && fastlane release",
     "build:android:beta": "cd android && fastlane beta",
-    "build:android:stage": "cd android && fastlane stage && ./gradlew assembleRelease",
+    "build:android:stage": "cd android && fastlane stage",
     "build:ios:stage": "cd ios && fastlane firebase",
     "build:android": "cd android && ./gradlew assembleRelease && cd ../",
     "build:android:aab": "cd android && ./gradlew bundleRelease -Phermes=true && cd ../",
