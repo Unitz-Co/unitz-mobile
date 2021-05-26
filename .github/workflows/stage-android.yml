@@ -80,8 +80,8 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           cd android
-          fastlane run update_fastlane
-          fastlane update_version
+          sudo fastlane update_version
+          sudo chmod a=r app/build.gradle
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
