@@ -76,10 +76,15 @@ jobs:
           yarn nuke:modules
       - name: Setup kernel for react native, increase watchers
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+      - name: update build version
+        working-directory: ${{env.working-directory}}
+        run: |
+          cd android
+          sudo fastlane update_version
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
-          sudo yarn build:android:stage
+          yarn build:android
       - name: upload artifact to Firebase App Distribution
         working-directory: ${{env.working-directory}}
         run: |
