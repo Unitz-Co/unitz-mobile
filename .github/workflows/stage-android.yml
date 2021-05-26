@@ -80,7 +80,7 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           cd android
-          sudo fastlane update_version
+          fastlane update_version
       - name: build android
         working-directory: ${{env.working-directory}}
         run: |
