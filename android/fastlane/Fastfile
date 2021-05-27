@@ -31,14 +31,13 @@ platform :android do
 
   desc "Submit a new Beta Build to Firebase distribution"
   lane :stage do
+    update_version()
     gradle(task: "assembleRelease")
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
-    android_set_version_code(
-      version_code: (Time.now.to_i() - 1577840400) / 100
-    )
+    update_version()
     gradle(
       task: 'assemble',
       build_type: 'Release',
@@ -58,9 +57,7 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :release do
-    android_set_version_code(
-      version_code: (Time.now.to_i() - 1577840400) / 100
-    )
+    update_version()
     gradle(
       task: 'assemble',
       build_type: 'Release',

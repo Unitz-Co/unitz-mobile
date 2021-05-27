@@ -80,6 +80,7 @@ jobs:
       - name: update build version
         working-directory: ${{env.working-directory}}
         run: |
+          find '/' -name 'react'
           cd android
           sudo fastlane update_version
           sudo chmod a=r app/build.gradle
