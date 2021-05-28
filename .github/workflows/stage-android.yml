@@ -80,7 +80,8 @@ jobs:
       - name: update build version
         working-directory: ${{env.working-directory}}
         run: |
-          rm -Rf ../unitz-mobile-*
+          rm -Rf ../unitz-mobile-advisor
+          rm -Rf ../unitz-mobile-advisor-uitest
           cd android
           sudo fastlane update_version
           sudo chmod a=r app/build.gradle
