@@ -30,27 +30,30 @@ import NSApp from '@uz/unitz-app';
 import ValidateProvider from '@uz/unitz-providers/ValidateProvider';
 import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 
-const App = () => (
-  <Providers
-    providers={[
-      RefProvider,
-      TestProvider,
-      ValidateProvider,
-      I18nProvider,
-      LoadableProvider,
-      AuthProvider,
-      PaymentProvider,
-      PresenceProvider,
-      PNProvider,
-      ContentProvider,
-      StyleManager,
-      SafeAreaProvider,
-      LayoutProvider,
-      UserProvider,
-    ]}
-  >
-    <NSApp />
-  </Providers>
-);
+const App = () => {
+  console.log('React.version:', React.version);
+  return (
+    <Providers
+      providers={[
+        RefProvider,
+        TestProvider,
+        ValidateProvider,
+        I18nProvider,
+        LoadableProvider,
+        AuthProvider,
+        PaymentProvider,
+        PresenceProvider,
+        PNProvider,
+        ContentProvider,
+        StyleManager,
+        SafeAreaProvider,
+        LayoutProvider,
+        UserProvider,
+      ]}
+    >
+      <NSApp />
+    </Providers>
+  );
+};
 
 export default App;
