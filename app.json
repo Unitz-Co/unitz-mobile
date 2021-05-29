@@ -1,6 +1,6 @@
 {
-  "name": "unitz-mobile",
-  "displayName": "unitz-mobile",
+  "name": "unitzmobile",
+  "displayName": "Unitz",
   "expo": {
     "name": "unitz-mobile",
     "slug": "unitz-mobile",
@@ -25,11 +25,11 @@
         }
       },
       "googleServicesFile": "./ios/GoogleService-Info.plist",
-      "bundleIdentifier": "com.unitz.mobile",
+      "bundleIdentifier": "app.unitz.user",
       "buildNumber": "1"
     },
     "android": {
-      "package": "com.unitzmobile",
+      "package": "app.unitz.user",
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-6395643728392024~1526666099"
       },

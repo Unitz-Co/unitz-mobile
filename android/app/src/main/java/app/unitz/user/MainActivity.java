@@ -1,4 +1,4 @@
-package com.unitzmobile;
+package app.unitz.user;
 
 import android.os.Bundle;
 

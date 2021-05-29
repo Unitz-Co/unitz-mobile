@@ -1,4 +1,4 @@
-package com.unitzmobile.generated;
+package app.unitz.user.generated;
 
 import java.util.Arrays;
 import java.util.List;
