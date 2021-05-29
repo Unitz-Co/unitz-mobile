@@ -104,6 +104,9 @@ platform :ios do
       readonly: true
     )
 
+    update_appicon
+    splash_screen
+
     update_project_team( # Set the right team on your project
       teamid: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     )
@@ -289,20 +292,19 @@ platform :ios do
     appicon(
       appicon_devices: [:ipad, :iphone, :ios_marketing],
       appicon_path: "unitzmobile/Images.xcassets",
-      appicon_image_file: '../../../modules/unitz-assets/Icon.jpg'
+      appicon_image_file: '../../../modules/unitz-assets/User/Icon.jpg'
     )
   end
 
   desc "Update splash"
   lane :splash_screen do
     appicon(
-      appicon_image_file: '../../../modules/unitz-assets/splash.png',
+      appicon_image_file: '../../../modules/unitz-assets/User/splashscreen.png',
       appicon_devices: [:universal],
       appicon_path: "unitzmobile/Images.xcassets",
       appicon_name: 'SplashScreen.imageset'
     )
   end
-
 
   desc 'Generate screenshots for app store'
   lane :generate_screenshots do
