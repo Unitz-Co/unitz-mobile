@@ -445,7 +445,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = unitz.app.mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.user;
 				PRODUCT_NAME = unitzmobile;
 				SWIFT_OBJC_BRIDGING_HEADER = "unitzmobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -475,10 +475,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = unitz.app.mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.user;
 				PRODUCT_NAME = unitzmobile;
 				PROVISIONING_PROFILE = "23ed799f-e8b5-46ca-819a-b725eaded106";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development unitz.app.mobile";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development app.unitz.user";
 				SWIFT_OBJC_BRIDGING_HEADER = "unitzmobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

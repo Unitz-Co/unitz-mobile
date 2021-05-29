@@ -70,7 +70,7 @@ platform :ios do
     MY_TEAM = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     build_number = (Time.now.to_i() - 1577840400) / 100
 
-    # match Appstore unitz.app.mobile
+    # match Appstore app.unitz.user
     ios_set_version(
       version: "1.0." + build_number.to_s,
       xcodeproj: XCODE_PROJECT # optional
@@ -158,7 +158,7 @@ platform :ios do
     MY_PROFILE = "match AdHoc #{MY_APP_ID}"
     MY_TEAM = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     build_number = (Time.now.to_i() - 1577840400) / 100
-    # match Appstore unitz.app.mobile
+    # match Appstore app.unitz.user
     ios_set_version(
       version: "1.0." + build_number.to_s,
       xcodeproj: XCODE_PROJECT # optional
