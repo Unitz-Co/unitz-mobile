@@ -61,6 +61,11 @@ Upload screenshots to app store
 fastlane ios upload_metadata
 ```
 Upload metadata to app store
+### ios reg_devices
+```
+fastlane ios reg_devices
+```
+Register devices
 
 ----
 

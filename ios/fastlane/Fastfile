@@ -334,4 +334,11 @@ platform :ios do
       skip_binary_upload: true,
   )
   end
+
+  desc 'Register devices'
+  lane :reg_devices do
+    register_devices(
+      devices_file: "./devices.p8", # You must pass in either `devices_file` or `devices`.
+    )
+  end
 end
