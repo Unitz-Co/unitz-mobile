@@ -1,22 +1,20 @@
-name: beta android
+name: stage codepush ios
 
 on:
   push:
     branches:
-      - "beta/android"
+      - "stage-push/ios"
 jobs:
-  beta-android:
-    runs-on: ubuntu-latest
+  stage-push-ios:
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=13.1,name=iPhone 11']
     env:
       working-directory: ./ws/packages/unitz-mobile
+      codepush-appname: Unitz/Unitz-iOS
+      codepush-deployment: Staging
     steps:
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0.0
-      - name: Set up our JDK environment
-        uses: actions/setup-java@v1.4.3
-        with:
-          java-version: 1.8
       - name: setup node v12
         uses: actions/setup-node@v2
         with:
@@ -35,14 +33,14 @@ jobs:
       - name: clone env
         uses: actions/checkout@v2
         with:
-          repository: Unitz-Co/envprod-app-mobile
+          repository: Unitz-Co/env-app-mobile
           path: config/env-app-mobile
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
       - name: clone credentials
         uses: actions/checkout@v2
         with:
-          repository: Unitz-Co/credentials-prod
+          repository: Unitz-Co/credentials
           path: config/credentials
           token: ${{ secrets.PAT_TOKEN }}
           persist-credentials: true
@@ -64,7 +62,7 @@ jobs:
       - name: retrive certs and env
         working-directory: ${{env.working-directory}}
         run: |
-          yarn config:android
+          yarn config:ios
       - name: check dir
         working-directory: ${{env.working-directory}}
         run: |
@@ -83,15 +81,30 @@ jobs:
           pwd
           yarn install
           yarn nuke:modules
-      - name: Setup kernel for react native, increase watchers
-        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-      - name: build android
+      - uses: actions/cache@v2
+        id: cachepods
+        with:
+          path: ${{env.working-directory}}/ios/Pods
+          key: ${{ runner.os }}pods-${{ hashFiles('${{env.working-directory}}/ios/Podfile.lock') }}
+      - name: install pod
         working-directory: ${{env.working-directory}}
+        if: steps.cachepods.outputs.cache-hit != 'true'
+        run: |
+          cd ios
+          pod install
+      - name: install appcenter
+        working-directory: ${{env.working-directory}}
+        run: |
+          npm install -g appcenter-cli
+      - name: Create codepush Build
+        working-directory: ${{env.working-directory}}
+        env:
+          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
         run: |
           source ../../../config/ws-scripts/sm/num.sh
           echo "BUILD_NUMBER_CUR: $BUILD_NUMBER_CUR"
           sed -i '' -e '/^JSBUNDLE_NUMBER=/s/=.*/='$BUILD_NUMBER_CUR'/g' env/US.env
-          sudo yarn build:android:beta
+          appcenter codepush release-react -t "1.0.0" -a ${{env.codepush-appname}} -d ${{env.codepush-deployment}} -m true --description "${BUILD_NUMBER_CUR}"
           cd ../..
           ../config/ws-scripts/sm/tag.sh stage/n_${BUILD_NUMBER_CUR}
           git pull --tags origin master
