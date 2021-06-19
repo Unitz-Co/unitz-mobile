@@ -14,7 +14,6 @@ jobs:
       working-directory: ./ws/packages/unitz-mobile
     steps:
       - name: setup ios
-        working-directory: ${{env.working-directory}}
         run: |
           brew install imagemagick
       - name: setup node v12
