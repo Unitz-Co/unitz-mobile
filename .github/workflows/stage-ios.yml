@@ -13,6 +13,9 @@ jobs:
     env:
       working-directory: ./ws/packages/unitz-mobile
     steps:
+      - name: setup ios
+        run: |
+          brew install imagemagick
       - name: setup node v12
         uses: actions/setup-node@v2
         with:
@@ -90,11 +93,7 @@ jobs:
         run: |
           cd ios
           pod install
-      - name: install appcenter
-        working-directory: ${{env.working-directory}}
-        run: |
-          npm install -g appcenter-cli
-      - name: Create codepush Build
+      - name: build and release to firebase
         working-directory: ${{env.working-directory}}
         env:
           APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
@@ -118,8 +117,7 @@ jobs:
           yarn dist:ios:fib --app ${{secrets.FIREBASE_IOS_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
           cd ../..
           ../config/ws-scripts/sm/tag.sh stage/n_${BUILD_NUMBER_CUR}
-          git pull --tags origin master
-          git push origin master --tags
+          git push origin master --tags --force
       - uses: iRoachie/slack-github-actions@v2.3.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
