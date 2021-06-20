@@ -30,9 +30,10 @@ import NSApp from '@uz/unitz-app';
 import ValidateProvider from '@uz/unitz-providers/ValidateProvider';
 import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 
-const App = () => {
-  console.log('React.version:', React.version);
-  return (
+import CodePushProvider from '@uz/unitz-providers/CodePushProvider';
+
+const App = CodePushProvider(
+  () => (
     <Providers
       providers={[
         RefProvider,
@@ -53,7 +54,8 @@ const App = () => {
     >
       <NSApp />
     </Providers>
-  );
-};
+  ),
+  `${process.env.JSBUNDLE_NUMBER || ''}`
+);
 
 export default App;
