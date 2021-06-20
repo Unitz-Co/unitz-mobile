@@ -44,6 +44,9 @@ platform :ios do
     update_project_team( # Set the right team on your project
       teamid: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     )    
+
+    update_CodePushDeploymentKey
+
     build_app(
       workspace: "unitzmobile.xcworkspace",
       scheme: "unitzmobile",
@@ -118,6 +121,8 @@ platform :ios do
       bundle_identifier: MY_APP_ID,
       profile_name: MY_PROFILE
     )
+
+    update_CodePushDeploymentKey
 
     build_app(
       workspace: XCODE_WORKSPACE,
@@ -228,6 +233,8 @@ platform :ios do
       bundle_identifier: MY_APP_ID,
       profile_name: MY_PROFILE
     )
+
+    update_CodePushDeploymentKey
 
     build_app(
       workspace: XCODE_WORKSPACE,
@@ -341,4 +348,19 @@ platform :ios do
       devices_file: "./devices.p8", # You must pass in either `devices_file` or `devices`.
     )
   end
+
+  desc 'Update CodePushDeploymentKey'
+  lane :update_CodePushDeploymentKey do
+    set_info_plist_value(
+      key: 'CodePushDeploymentKey',
+      value: ENV["CODE_PUSH_DEPLOYMENT_KEY"],
+      path: "#{PROJECT_NAME}/Info.plist"
+    )
+    set_info_plist_value(
+      key: 'AppSecret',
+      value: ENV["CODE_PUSH_APP_SECRET"],
+      path: "AppCenter-Config.plist"
+    )
+  end
+
 end
