@@ -194,7 +194,7 @@ platform :ios do
       password: ENV["CI_KEYCHAIN_PASSWORD"],
       default_keychain: false,
       unlock: true,
-      timeout: false,
+      timeout: 3600,
       lock_when_sleeps: false
     )
 
