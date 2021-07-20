@@ -32,6 +32,7 @@ import ValidateProvider from '@uz/unitz-providers/ValidateProvider';
 import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 
 import CodePushProvider from '@uz/unitz-providers/CodePushProvider';
+import AlertProvider from '@uz/unitz-providers/AlertProvider';
 
 const App = CodePushProvider(
   () => (
@@ -52,6 +53,7 @@ const App = CodePushProvider(
         SafeAreaProvider,
         LayoutProvider,
         UserProvider,
+        AlertProvider,
       ]}
     >
       <NSApp />
