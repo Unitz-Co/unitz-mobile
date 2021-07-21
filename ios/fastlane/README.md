@@ -66,6 +66,11 @@ Upload metadata to app store
 fastlane ios reg_devices
 ```
 Register devices
+### ios update_CodePushDeploymentKey
+```
+fastlane ios update_CodePushDeploymentKey
+```
+Update CodePushDeploymentKey
 
 ----
 

@@ -15,6 +15,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Providers from '@uz/components/Providers';
 import StyleManager from '@vl/gstyles/StyleManager';
 import ContentProvider from '@uz/unitz-providers/ContentfulProvider';
+import AppContentfulProvider from '@uz/unitz-providers/AppContentfulProvider';
 import AuthProvider from '@uz/unitz-providers/AuthProvider';
 import UserProvider from '@uz/unitz-providers/UserProvider';
 import PresenceProvider from '@uz/unitz-providers/PresenceProvider';
@@ -31,6 +32,7 @@ import ValidateProvider from '@uz/unitz-providers/ValidateProvider';
 import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 
 import CodePushProvider from '@uz/unitz-providers/CodePushProvider';
+import AlertProvider from '@uz/unitz-providers/AlertProvider';
 
 const App = CodePushProvider(
   () => (
@@ -46,10 +48,12 @@ const App = CodePushProvider(
         PresenceProvider,
         PNProvider,
         ContentProvider,
+        AppContentfulProvider,
         StyleManager,
         SafeAreaProvider,
         LayoutProvider,
         UserProvider,
+        AlertProvider,
       ]}
     >
       <NSApp />
