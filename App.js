@@ -17,6 +17,7 @@ import StyleManager from '@vl/gstyles/StyleManager';
 import ContentProvider from '@uz/unitz-providers/ContentfulProvider';
 import AppContentfulProvider from '@uz/unitz-providers/AppContentfulProvider';
 import AuthProvider from '@uz/unitz-providers/AuthProvider';
+import AppConfigProvider from '@uz/unitz-providers/AppConfigProvider';
 import UserProvider from '@uz/unitz-providers/UserProvider';
 import PresenceProvider from '@uz/unitz-providers/PresenceProvider';
 import LayoutProvider from '@uz/unitz-providers/LayoutProvider';
@@ -39,6 +40,7 @@ const App = CodePushProvider(
     <Providers
       providers={[
         RefProvider,
+        AppConfigProvider,
         TestProvider,
         ValidateProvider,
         I18nProvider,
