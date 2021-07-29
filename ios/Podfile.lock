@@ -730,6 +730,8 @@ PODS:
     - React
   - react-native-idle-timer (2.1.6):
     - React
+  - react-native-image-picker (4.0.6):
+    - React-Core
   - react-native-keep-awake (3.2.0):
     - React
   - react-native-safe-area-context (3.2.0):
@@ -958,6 +960,7 @@ DEPENDENCIES:
   - react-native-appearance (from `../node_modules/react-native-appearance`)
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - react-native-idle-timer (from `../node_modules/react-native-idle-timer`)
+  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-keep-awake (from `../node_modules/react-native-keep-awake`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-vnpay-merchant (from `../node_modules/react-native-vnpay-merchant`)
@@ -1151,6 +1154,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-fbsdk"
   react-native-idle-timer:
     :path: "../node_modules/react-native-idle-timer"
+  react-native-image-picker:
+    :path: "../node_modules/react-native-image-picker"
   react-native-keep-awake:
     :path: "../node_modules/react-native-keep-awake"
   react-native-safe-area-context:
@@ -1347,6 +1352,7 @@ SPEC CHECKSUMS:
   react-native-appearance: 0f0e5fc2fcef70e03d48c8fe6b00b9158c2ba8aa
   react-native-fbsdk: 8e92c7a334fd8d9c2b5d8b8fcd7ae2c314161099
   react-native-idle-timer: 1d5aacf8915340f4c59b56ff829a6c08ec4e43ee
+  react-native-image-picker: a6e56460d34905c849ada551db30897dc7f3d535
   react-native-keep-awake: 41bae558a47103a9ca06d9a35f15bab88207d7db
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-vnpay-merchant: c9f1ebb375802c7004045e3646240f043acaaf61
