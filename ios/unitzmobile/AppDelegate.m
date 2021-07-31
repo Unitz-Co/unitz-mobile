@@ -5,6 +5,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <React/RCTLinkingManager.h>
+#import "RNMomosdk.h"
 
 // @Import CodePush & AppCenter
 #import <CodePush/CodePush.h>
@@ -114,6 +115,7 @@ static void InitializeFlipper(UIApplication *application) {
 
 // Linking API
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+  [RNMomosdk handleOpenUrl:url];
   return [RCTLinkingManager application:application openURL:url options:options];
 }
 

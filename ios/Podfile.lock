@@ -736,6 +736,12 @@ PODS:
     - React
   - react-native-safe-area-context (3.2.0):
     - React-Core
+  - react-native-twilio-phone (1.6.0):
+    - React
+    - TwilioVoice (~> 6.2)
+  - react-native-twilio-video-webrtc (2.0.0):
+    - React
+    - TwilioVideo (~> 4.1)
   - react-native-vnpay-merchant (1.0.0):
     - React
   - react-native-webview (10.9.2):
@@ -800,6 +806,8 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
+  - RNCallKeep (4.2.0):
+    - React
   - RNCMaskedView (0.1.10):
     - React
   - RNCPicker (1.6.6):
@@ -868,6 +876,8 @@ PODS:
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
     - React-Core
+  - RNMomosdk (1.3.1):
+    - React
   - RNPermissions (3.0.4):
     - React-Core
   - RNReanimated (1.13.3):
@@ -892,6 +902,8 @@ PODS:
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.7)
   - SSZipArchive (2.2.3)
+  - TwilioVideo (4.4.0)
+  - TwilioVoice (6.3.0)
   - UMAppLoader (1.3.0)
   - UMBarCodeScannerInterface (5.3.0)
   - UMCameraInterface (5.3.0)
@@ -963,6 +975,8 @@ DEPENDENCIES:
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-keep-awake (from `../node_modules/react-native-keep-awake`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-twilio-phone (from `../node_modules/react-native-twilio-phone`)
+  - react-native-twilio-video-webrtc (from `../node_modules/react-native-twilio-video-webrtc`)
   - react-native-vnpay-merchant (from `../node_modules/react-native-vnpay-merchant`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -975,6 +989,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNCallKeep (from `../node_modules/react-native-callkeep`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-community/picker`)"
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
@@ -994,6 +1009,7 @@ DEPENDENCIES:
   - "RNFBStorage (from `../node_modules/@react-native-firebase/storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-community/google-signin`)"
+  - RNMomosdk (from `../node_modules/react-native-momosdk`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1062,6 +1078,8 @@ SPEC REPOS:
     - SDWebImage
     - SDWebImageWebPCoder
     - SSZipArchive
+    - TwilioVideo
+    - TwilioVoice
 
 EXTERNAL SOURCES:
   appcenter-analytics:
@@ -1160,6 +1178,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-keep-awake"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-twilio-phone:
+    :path: "../node_modules/react-native-twilio-phone"
+  react-native-twilio-video-webrtc:
+    :path: "../node_modules/react-native-twilio-video-webrtc"
   react-native-vnpay-merchant:
     :path: "../node_modules/react-native-vnpay-merchant"
   react-native-webview:
@@ -1184,6 +1206,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCallKeep:
+    :path: "../node_modules/react-native-callkeep"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNCPicker:
@@ -1222,6 +1246,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-community/google-signin"
+  RNMomosdk:
+    :path: "../node_modules/react-native-momosdk"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -1355,6 +1381,8 @@ SPEC CHECKSUMS:
   react-native-image-picker: a6e56460d34905c849ada551db30897dc7f3d535
   react-native-keep-awake: 41bae558a47103a9ca06d9a35f15bab88207d7db
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
+  react-native-twilio-phone: b9a2ccad04d76c8528d02abcb8171488bb3f05f9
+  react-native-twilio-video-webrtc: 5b40ee0129687cb89fb5055680aed35c8db4be07
   react-native-vnpay-merchant: c9f1ebb375802c7004045e3646240f043acaaf61
   react-native-webview: 4e96d493f9f90ba4f03b28933f30b2964df07e39
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
@@ -1367,6 +1395,7 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
+  RNCallKeep: 8cbaafb72c4a1738f4a6e70fdaf041a14083ce5b
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 494015f2b7ec4bee5484b6f235aa19691426dcdb
   RNCPushNotificationIOS: 61a7c72bd1ebad3568025957d001e0f0e7b32191
@@ -1386,6 +1415,7 @@ SPEC CHECKSUMS:
   RNFBStorage: fb33c149ca21187b86f4e32dc35693525b5f2ac0
   RNGestureHandler: b6b359bb800ae399a9c8b27032bdbf7c18f08a08
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
+  RNMomosdk: 250cc7423c370f1fc34b95499c68e4cf0c097c92
   RNPermissions: c46788f4cd402287425983e04a4c9bb4356036eb
   RNReanimated: 514a11da3a2bcc6c3dfd9de32b38e2b9bf101926
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
@@ -1396,6 +1426,8 @@ SPEC CHECKSUMS:
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  TwilioVideo: fcf10b7460e582570887d194b73e75425685d813
+  TwilioVoice: 6b1d796dcdec4ec6e6d2165bc66a266db1d2d93f
   UMAppLoader: 5db5dc03176c6238da9c8b3657a370137882a4ad
   UMBarCodeScannerInterface: 017672479f93de88d94c3a50dfb66b5348b65989
   UMCameraInterface: 22bd2c4bf15dcf68530368fa5704af7490818457

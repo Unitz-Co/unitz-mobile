@@ -65,6 +65,7 @@
 	<string>ca-app-pub-6395643728392024~1526666099</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>momo</string>
 		<string>fbapi</string>
 		<string>fbapi20130214</string>
 		<string>fbapi20130410</string>
