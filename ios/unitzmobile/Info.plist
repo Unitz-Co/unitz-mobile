@@ -51,6 +51,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>15</string>
+	<key>CodePushDeploymentKey</key>
+	<string>CodePushDeploymentKey</string>
 	<key>FacebookAdvertiserIDCollectionEnabled</key>
 	<true/>
 	<key>FacebookAppID</key>
@@ -87,15 +89,7 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
+		<false/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Please grant permission to access your device camera in order to make the call</string>
@@ -128,7 +122,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CodePushDeploymentKey</key>
-	<string>CodePushDeploymentKey</string>
 </dict>
 </plist>
