@@ -37,7 +37,10 @@ platform :android do
   desc "Submit a new Beta Build to Firebase distribution"
   lane :stage do
     update_version()
-    gradle(task: "assembleRelease")
+    gradle(
+      task: 'bundle',
+      build_type: 'Release',
+    )
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
