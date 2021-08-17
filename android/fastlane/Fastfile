@@ -29,7 +29,7 @@ platform :android do
     )
     # first release
     android_set_version_name(
-      version_name: "1.1.1"
+      version_name: "1.1.2"
     )
     # gradle(task: "assembleRelease")
   end
@@ -37,14 +37,17 @@ platform :android do
   desc "Submit a new Beta Build to Firebase distribution"
   lane :stage do
     update_version()
-    gradle(task: "assembleRelease")
+    gradle(
+      task: 'bundle',
+      build_type: 'Release',
+    )
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
     update_version()
     gradle(
-      task: 'assemble',
+      task: 'bundle',
       build_type: 'Release',
     )
 
@@ -55,7 +58,7 @@ platform :android do
       release_status: 'draft',
       skip_upload_screenshots: true,
       skip_upload_images: true,
-      apk: 'app/build/outputs/apk/release/app-release.apk',
+      aab: 'app/build/outputs/bundle/release/app-release.aab',
     )
   
   end
@@ -64,13 +67,13 @@ platform :android do
   lane :release do
     update_version()
     gradle(
-      task: 'assemble',
+      task: 'bundle',
       build_type: 'Release',
     )
     upload_to_play_store(
       track: 'production',
       release_status: 'draft',
-      apk: 'app/build/outputs/apk/release/app-release.apk',
+      aab: 'app/build/outputs/bundle/release/app-release.aab',
     )
   end
 
