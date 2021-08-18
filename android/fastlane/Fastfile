@@ -38,7 +38,7 @@ platform :android do
   lane :stage do
     update_version()
     gradle(
-      task: 'bundle',
+      task: 'assemble',
       build_type: 'Release',
     )
   end
