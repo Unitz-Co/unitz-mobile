@@ -34,13 +34,13 @@ import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 
 import CodePushProvider from '@uz/unitz-providers/CodePushProvider';
 import AlertProvider from '@uz/unitz-providers/AlertProvider';
+import MessageProvider from '@uz/unitz-providers/MessageProvider';
 
 import * as Sentry from '@sentry/react-native';
 
-Sentry.init({ 
-  dsn: 'https://5ad567dccfce417683b816c669c7eea2@o946942.ingest.sentry.io/5896068', 
+Sentry.init({
+  dsn: 'https://5ad567dccfce417683b816c669c7eea2@o946942.ingest.sentry.io/5896068',
 });
-
 
 const App = CodePushProvider(
   () => (
@@ -63,6 +63,7 @@ const App = CodePushProvider(
         LayoutProvider,
         UserProvider,
         AlertProvider,
+        MessageProvider,
       ]}
     >
       <NSApp />
