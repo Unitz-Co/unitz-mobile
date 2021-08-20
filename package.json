@@ -1,6 +1,6 @@
 {
   "name": "@uz/unitz-mobile",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "main": "index.js",
   "scripts": {
     "nuke:modules": "find '../../modules/' -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
@@ -17,7 +17,7 @@
     "config:env": "rsync -aP ../../../config/env-app-mobile/packages/unitz-mobile/ ./",
     "config:android": "rsync -aP ../../../config/credentials/packages/unitz-mobile/android/ android/ && yarn config:env",
     "config:ios": "rsync -aP ../../../config/credentials/packages/unitz-mobile/ios/ ios/ && yarn config:env",
-    "dist:android:fib": "firebase appdistribution:distribute android/app/build/outputs/bundle/release/app-release.aab",
+    "dist:android:fib": "firebase appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk",
     "dist:ios:fib": "firebase appdistribution:distribute ios/builds/outputs/unitzmobile.ipa",
     "build:android:debug": "yarn clean:android:build && cd android && ./gradlew assembleDebug",
     "build:android:release": "cd android && fastlane release",
@@ -61,6 +61,7 @@
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@expo/vector-icons": "^10.0.0",
     "@gorhom/bottom-sheet": "^2",
+    "@react-native-community/blur": "^3.6.0",
     "@react-native-community/google-signin": "^5.0.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/picker": "1.6.6",
