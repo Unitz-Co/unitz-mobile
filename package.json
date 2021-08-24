@@ -105,6 +105,7 @@
     "card-validator": "^8.1.0",
     "contentful": "^8.1.7",
     "cross-fetch": "^3.0.6",
+    "d3-shape": "^3.0.1",
     "expo": "~39.0.2",
     "expo-apple-authentication": "~2.2.1",
     "expo-application": "~2.3.0",
