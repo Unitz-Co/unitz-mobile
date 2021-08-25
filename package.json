@@ -166,7 +166,6 @@
     "react-native-sliders": "^1.1.1",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-sound": "^0.11.0",
-    "react-native-stripe-checkout-webview": "^0.0.13",
     "react-native-svg": "^12.1.0",
     "react-native-tab-view": "^2.15.2",
     "react-native-twilio-video-webrtc": "https://github.com/blackuy/react-native-twilio-video-webrtc",
