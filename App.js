@@ -35,6 +35,7 @@ import PaymentProvider from '@uz/unitz-providers/PaymentProvider';
 import CodePushProvider from '@uz/unitz-providers/CodePushProvider';
 import AlertProvider from '@uz/unitz-providers/AlertProvider';
 import MessageProvider from '@uz/unitz-providers/MessageProvider';
+import AppStripeProvider from '@uz/unitz-providers/AppStripeProvider';
 
 import * as Sentry from '@sentry/react-native';
 
@@ -64,6 +65,7 @@ const App = CodePushProvider(
         UserProvider,
         AlertProvider,
         MessageProvider,
+        AppStripeProvider,
       ]}
     >
       <NSApp />
