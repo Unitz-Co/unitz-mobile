@@ -19,7 +19,7 @@ import AppContentfulProvider from '@uz/unitz-providers/AppContentfulProvider';
 import AuthProvider from '@uz/unitz-providers/AuthProvider';
 import AppConfigProvider from '@uz/unitz-providers/AppConfigProvider';
 import UserProvider from '@uz/unitz-providers/UserProvider';
-import PresenceProvider from '@uz/unitz-providers/PresenceProvider';
+import PresenceProvider from '@uz/unitz-providers/PresenceUserProvider';
 import LayoutProvider from '@uz/unitz-providers/LayoutProvider';
 import RefProvider from '@uz/unitz-providers/RefProvider';
 import PNProvider from '@uz/unitz-providers/PNProvider';
