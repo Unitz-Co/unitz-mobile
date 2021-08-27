@@ -3,7 +3,7 @@ name: Stage Distribute android
 on:
   push:
     branches:
-      - "stage/android"
+      - 'stage/android'
 jobs:
   stage-android:
     runs-on: ubuntu-latest
@@ -84,7 +84,7 @@ jobs:
           echo "BUILD_NUMBER_CUR: $BUILD_NUMBER_CUR"
           sed -i -e '/^JSBUNDLE_NUMBER=/s/=.*/='$BUILD_NUMBER_CUR'/g' env/US.env
           sudo yarn build:android:stage
-          yarn dist:android:fib --app ${{secrets.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
+          yarn dist:android:apc --app Unitz/Unitz-Android --group testers
           cd ../..
       - uses: iRoachie/slack-github-actions@v2.3.0
         env:
