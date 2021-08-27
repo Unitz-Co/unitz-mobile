@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       working-directory: ./ws/packages/unitz-mobile
+      codepush-appname: Unitz/Unitz-Android
+      codepush-deployment: Staging
     steps:
       - uses: ruby/setup-ruby@v1
         with:
