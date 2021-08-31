@@ -890,7 +890,7 @@ PODS:
     - Sentry (= 7.1.4)
   - RNSha256 (1.4.7):
     - React
-  - RNShare (4.1.2):
+  - RNShare (7.0.1):
     - React-Core
   - RNSound (0.11.0):
     - React
@@ -1444,7 +1444,7 @@ SPEC CHECKSUMS:
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
   RNSentry: 68644ef607b780551cc555f084869764f2566652
   RNSha256: bf2c90a9e0cec6dcbcc4100e4e19715ae7feaa34
-  RNShare: d22507fa5e80c72f236b5622556cf831de5b1e93
+  RNShare: 2dc2fcac3f7321cfd6b60a23ed4bf4d549f86f5f
   RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
