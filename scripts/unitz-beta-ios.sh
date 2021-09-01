@@ -7,12 +7,8 @@ kill -9 $(lsof -t -i:8081)
 # source ../config/ws-scripts/sm/num.sh
 source ../../../config/ws-scripts/sm/num.sh
 
-# cd packages/unitz-mobile
-
 # config
 yarn config:ios:prod
-# yarn install
-# yarn nuke:modules
 
 # install
 cd ios
@@ -23,7 +19,3 @@ fastlane beta
 cd ..
 # release
 
-#cleanup
-# cd $PWD
-# rm -Rf ./ws
-# rm -Rf ./config
