@@ -48,8 +48,7 @@ platform :android do
   lane :beta do
     update_version()
     gradle(
-      task: 'bundle',
-      build_type: 'Release',
+      tasks: ['bundleRelease', 'assembleRelease'],
     )
 
     # crashlytics
