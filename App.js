@@ -22,7 +22,7 @@ import UserProvider from '@uz/unitz-providers/UserProvider';
 import PresenceProvider from '@uz/unitz-providers/PresenceUserProvider';
 import LayoutProvider from '@uz/unitz-providers/LayoutProvider';
 import RefProvider from '@uz/unitz-providers/RefProvider';
-import PNProvider from '@uz/unitz-providers/PNProvider';
+import PNProvider from '@uz/unitz-providers/PNUserProvider';
 import { LoadableProvider } from '@uz/components/Loadable';
 import I18nProvider from '@uz/unitz-providers/I18nProvider';
 import TestProvider from '@uz/unitz-providers/TestProvider';
