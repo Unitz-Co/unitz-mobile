@@ -37,6 +37,7 @@ import AlertProvider from '@uz/unitz-providers/AlertProvider';
 import MessageProvider from '@uz/unitz-providers/MessageProvider';
 import LoadingProvider from '@uz/unitz-providers/LoadingProvider';
 import AppStripeProvider from '@uz/unitz-providers/AppStripeProvider';
+import AppCalendarProvider from '@uz/unitz-providers/AppCalendarProvider';
 
 import * as Sentry from '@sentry/react-native';
 
@@ -68,6 +69,7 @@ const App = CodePushProvider(
         LayoutProvider,
         UserProvider,
         AppStripeProvider,
+        AppCalendarProvider,
       ]}
     >
       <NSApp />
