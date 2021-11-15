@@ -81,6 +81,16 @@ static void InitializeFlipper(UIApplication *application) {
   return YES;
 }
 
+// Called when a notification is delivered to a foreground app.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+       willPresentNotification:(UNNotification *)notification
+         withCompletionHandler:
+             (void (^)(UNNotificationPresentationOptions options))
+                 completionHandler {
+  completionHandler(UNNotificationPresentationOptionSound | UNNotificationPresentationOptionBadge |
+                    UNNotificationPresentationOptionAlert);
+}
+
 // Required for the register event.
 - (void)application:(UIApplication *)application
     didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
