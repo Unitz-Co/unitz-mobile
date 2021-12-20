@@ -10,6 +10,7 @@
 #import <PushKit/PushKit.h>
 #import "RNCallKeep.h"
 #import "RNVoipPushNotificationManager.h"
+#import <RNBackgroundDownloader.h>
 
 // @Import CodePush & AppCenter
 #import <CodePush/CodePush.h>
@@ -212,6 +213,11 @@ static void InitializeFlipper(UIApplication *application) {
   return [RCTLinkingManager application:application
                   continueUserActivity:userActivity
                     restorationHandler:restorationHandler];
+}
+
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler
+{
+  [RNBackgroundDownloader setCompletionHandlerWithIdentifier:identifier completionHandler:completionHandler];
 }
 
 @end
