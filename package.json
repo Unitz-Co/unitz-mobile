@@ -57,9 +57,9 @@
     "precommit": "lint-staged",
     "jetify": "npx jetify",
     "test": "jest",
-    "config-splash-ios": "configure-splash-screen -p 'ios' -b '#EB4781' -i '../../modules/unitz-assets/User/splash_screen.png'",
-    "config-splash-android": "configure-splash-screen -p 'android' --status-bar-translucent --status-bar-background-color '#EB4781' -b '#EB4781' -i '../../modules/unitz-assets/User/splash_screen.png'",
-    "config-splash": "configure-splash-screen --status-bar-translucent --status-bar-background-color '#EB4781' -b '#EB4781' -i '../../modules/unitz-assets/User/splash_screen.png'"
+    "config-splash-ios": "configure-splash-screen -p 'ios' -b '#2EB2AA' -i '../../modules/unitz-assets/User/splash_screen.png'",
+    "config-splash-android": "configure-splash-screen -p 'android' --status-bar-translucent --status-bar-background-color '#2EB2AA' -b '#2EB2AA' -i '../../modules/unitz-assets/User/splash_screen.png'",
+    "config-splash": "configure-splash-screen --status-bar-translucent --status-bar-background-color '#2EB2AA' -b '#2EB2AA' -i '../../modules/unitz-assets/User/splash_screen.png'"
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
